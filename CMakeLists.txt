@@ -16,7 +16,8 @@ execute_process(COMMAND
 )
 
 add_executable(${PROGRAM_NAME}
-    main.c
+    main.cpp
+    dfPlayer/dfPlayer.cpp 
 )
 
 target_include_directories(${PROGRAM_NAME} PRIVATE
