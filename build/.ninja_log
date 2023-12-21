@@ -86,7 +86,7 @@
 4141	4673	7248747511504856	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/core/ipv6/icmp6.c.obj	8f478146ac72408
 4317	4697	7248747512066500	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/core/ipv6/ip6.c.obj	fe90480c828c478d
 4346	4751	7248747512745747	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/core/ipv6/ip6_addr.c.obj	5daaae504507e419
-50	378	7248852883150985	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	fa898258608fb3a8
+33	365	7248881341935630	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	fa898258608fb3a8
 4528	4855	7248747513865261	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/core/ipv6/nd6.c.obj	513d98a72d4ce407
 4453	4863	7248747513875235	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/core/ipv6/ip6_frag.c.obj	59ab5cf4ab93e6e
 4508	4996	7248747515058929	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/core/ipv6/mld6.c.obj	17950e740806bf6c
@@ -149,7 +149,7 @@
 8408	8692	7248747551895920	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj	33d5a436376e86cb
 8403	8932	7248747554455631	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj	48dd48c67032b8ed
 8518	9036	7248747554975532	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/apps/http/altcp_proxyconnect.c.obj	5aaec10a4f9858df
-56	252	7248852881877513	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/apps/http/fs.c.obj	5d9899bc3c8b6c8b
+47	246	7248859290533598	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/apps/http/fs.c.obj	5d9899bc3c8b6c8b
 8529	9168	7248747556559443	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/apps/http/http_client.c.obj	d589db9a7d7659ec
 8932	9185	7248747557130227	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj	f92d6173ceb6fe54
 8692	9206	7248747557158256	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj	6cd7ca1fc58c9c30
@@ -170,7 +170,7 @@
 9889	10565	7248747570559701	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj	f6c53df282e37661
 10155	10810	7248747572545624	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj	a014012215ee428b
 10184	10836	7248747573160327	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj	df75e36afca77738
-378	973	7248852886214318	pico_w_webserver.elf	e50dffbdc087f1d5
+366	899	7248881344897213	pico_w_webserver.elf	e50dffbdc087f1d5
 10268	10931	7248747574425986	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj	1ab2e8abc386f466
 10565	10987	7248747574559878	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj	b0f7a96c2d928eb4
 10230	11000	7248747574746717	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/tinyusb/src/device/usbd.c.obj	82cfece38f59b657
@@ -189,14 +189,3 @@
 8413	11582	7248747581067141	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj	7f49ed5ae2c97abe
 11153	11623	7248747581566881	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/tinyusb/src/tusb.c.obj	274564a0177cc030
 63	244	7248757039526522	CMakeFiles/pico_w_webserver.dir/dfPlayer/dfPlayer.cpp.obj	6f4c0f451fc5fab2
-47	246	7248859290533598	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/apps/http/fs.c.obj	5d9899bc3c8b6c8b
-41	363	7248859291706753	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	fa898258608fb3a8
-364	959	7248859295198882	pico_w_webserver.elf	e50dffbdc087f1d5
-37	301	7248862305817340	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	fa898258608fb3a8
-317	874	7248862308832953	pico_w_webserver.elf	e50dffbdc087f1d5
-43	358	7248863797724681	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	fa898258608fb3a8
-360	919	7248863800868207	pico_w_webserver.elf	e50dffbdc087f1d5
-39	325	7248866026664571	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	fa898258608fb3a8
-326	882	7248866029507730	pico_w_webserver.elf	e50dffbdc087f1d5
-33	365	7248881341935630	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	fa898258608fb3a8
-366	899	7248881344897213	pico_w_webserver.elf	e50dffbdc087f1d5
