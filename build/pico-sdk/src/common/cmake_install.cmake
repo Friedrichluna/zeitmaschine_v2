@@ -1,4 +1,4 @@
-# Install script for directory: E:/programs/PICO/pico-sdk/src/common
+# Install script for directory: D:/programs/Pico Installer/pico-sdk/src/common
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,22 +34,22 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "E:/programs/PICO/gcc-arm-none-eabi/bin/arm-none-eabi-objdump.exe")
+  set(CMAKE_OBJDUMP "D:/programs/Pico Installer/gcc-arm-none-eabi/bin/arm-none-eabi-objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("E:/Onedrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/boot_picoboot/cmake_install.cmake")
-  include("E:/Onedrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/boot_uf2/cmake_install.cmake")
-  include("E:/Onedrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_base/cmake_install.cmake")
-  include("E:/Onedrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_usb_reset_interface/cmake_install.cmake")
-  include("E:/Onedrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_bit_ops/cmake_install.cmake")
-  include("E:/Onedrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_binary_info/cmake_install.cmake")
-  include("E:/Onedrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_divider/cmake_install.cmake")
-  include("E:/Onedrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_sync/cmake_install.cmake")
-  include("E:/Onedrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_time/cmake_install.cmake")
-  include("E:/Onedrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_util/cmake_install.cmake")
-  include("E:/Onedrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_stdlib/cmake_install.cmake")
+  include("C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/boot_picoboot/cmake_install.cmake")
+  include("C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/boot_uf2/cmake_install.cmake")
+  include("C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_base/cmake_install.cmake")
+  include("C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_usb_reset_interface/cmake_install.cmake")
+  include("C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_bit_ops/cmake_install.cmake")
+  include("C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_binary_info/cmake_install.cmake")
+  include("C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_divider/cmake_install.cmake")
+  include("C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_sync/cmake_install.cmake")
+  include("C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_time/cmake_install.cmake")
+  include("C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_util/cmake_install.cmake")
+  include("C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/common/pico_stdlib/cmake_install.cmake")
 
 endif()
 

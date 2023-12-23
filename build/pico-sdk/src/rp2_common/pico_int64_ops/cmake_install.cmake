@@ -1,4 +1,4 @@
-# Install script for directory: E:/programs/PICO/pico-sdk/src/rp2_common/pico_int64_ops
+# Install script for directory: D:/programs/Pico Installer/pico-sdk/src/rp2_common/pico_int64_ops
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "E:/programs/PICO/gcc-arm-none-eabi/bin/arm-none-eabi-objdump.exe")
+  set(CMAKE_OBJDUMP "D:/programs/Pico Installer/gcc-arm-none-eabi/bin/arm-none-eabi-objdump.exe")
 endif()
 
