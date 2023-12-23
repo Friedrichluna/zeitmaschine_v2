@@ -2,7 +2,7 @@
 2459	3285	7249882536287391	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/common/pico_sync/lock_core.c.obj	82a4bf1235bd8a1a
 51	269	7249882509069288	pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.pio.h	fbb0a79e44b7ddb1
 41	200	7249882508339364	pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj	64cb23fb2cfab01e
-26732	28450	7249882783268432	pico_w_webserver.elf	c83c8c6edbfe099d
+504	1439	7250676433369564	pico_w_webserver.elf	c83c8c6edbfe099d
 3987	5081	7249882549517399	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj	7ce4b75e62bb0a4e
 205	611	7249882509669289	pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf	905ec90f2458bd2d
 14325	15728	7249882657863648	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/netif/ppp/pppoe.c.obj	85bd652c99fecac6
@@ -12,7 +12,7 @@
 2220	3494	7249882538867438	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj	306bc30368ff5d21
 611	721	7249882513529367	pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin	fb8ff3d6e1e21af6
 722	888	7249882515179314	pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S	525dbd6b40bf2bf7
-889	3348	7249882537927400	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	9a714ebfe0144178
+57	500	7250676427379226	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	9a714ebfe0144178
 51	269	7249882509069288	C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.pio.h	fbb0a79e44b7ddb1
 722	888	7249882515179314	C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v1/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S	525dbd6b40bf2bf7
 989	1898	7249882524547393	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj	503b3fa679e78b19
@@ -145,7 +145,7 @@
 17125	18351	7249882686644503	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj	f157c7a373872b33
 16319	18570	7249882691634566	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj	c87f884e9e87374c
 17468	18668	7249882692384483	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/apps/http/altcp_proxyconnect.c.obj	bc23f4fdeda31998
-154	503	7250464585647597	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/apps/http/fs.c.obj	8a488998cf1869ac
+107	1376	7250670086922903	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/apps/http/fs.c.obj	8a488998cf1869ac
 17426	19218	7249882693984495	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj	adae24c8582ada2
 17512	19234	7249882694074518	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/apps/http/http_client.c.obj	451c67e029d11921
 18351	19526	7249882696854566	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj	50c66470ae781e30
@@ -188,8 +188,6 @@
 25050	26643	7249882772548456	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/tinyusb/src/tusb.c.obj	1e30be5d101bf4d5
 25860	26694	7249882773148370	CMakeFiles/pico_w_webserver.dir/e2226c621bd5376d7ebbd5ae0e79b953/rp2040_usb_device_enumeration.c.obj	bda8716e23345cee
 25075	26731	7249882773558370	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj	72cb7ddb4710a8f5
-153	583	7250468670046339	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/apps/http/fs.c.obj	8a488998cf1869ac
-129	1187	7250468676017603	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	9a714ebfe0144178
-1188	8128	7250468736900366	pico_w_webserver.elf	c83c8c6edbfe099d
-145	932	7250468839847753	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	9a714ebfe0144178
-934	2322	7250468847983800	pico_w_webserver.elf	c83c8c6edbfe099d
+124	801	7250682246516031	CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/apps/http/fs.c.obj	8a488998cf1869ac
+66	494	7250682517434994	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	9a714ebfe0144178
+496	1382	7250682522564838	pico_w_webserver.elf	c83c8c6edbfe099d
