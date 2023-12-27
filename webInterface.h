@@ -9,6 +9,8 @@
 #define MAX_RELAY_TIMERS 32
 #define MAX_RELAY_AMOUNT 16
 
+#define CONNECTION_TIMEOUT_MS 5000
+
 
 
 
@@ -37,7 +39,7 @@ public:
         cyw43_arch_enable_sta_mode();
 
         // Connect to the WiFI network - loop until connected
-        while(cyw43_arch_wifi_connect_timeout_ms("TABLET", "12345678", CYW43_AUTH_WPA2_AES_PSK, 30000) != 0){
+        while(cyw43_arch_wifi_connect_timeout_ms("TABLET", "12345678", CYW43_AUTH_WPA2_AES_PSK, CONNECTION_TIMEOUT_MS) != 0){
             printf("Attempting to connect...\n");
         }
         // Print a success message once connected

@@ -29,7 +29,12 @@ target_link_libraries(${PROGRAM_NAME}
     pico_lwip_http
     pico_stdlib
     hardware_adc
+    #flash_program
+    hardware_flash
 )
+
+pico_set_linker_script(${PROGRAM_NAME} ${CMAKE_SOURCE_DIR}/memmap_custom.ld)
+
 
 pico_enable_stdio_usb(${PROGRAM_NAME} TRUE)
 pico_enable_stdio_uart(${PROGRAM_NAME} FALSE)

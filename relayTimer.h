@@ -7,27 +7,28 @@
 #define ITERATIONS_PER_SECOND 100;
 
 
-void print_something() {
-    printf("test");
-}
 
 class RelayTimer {
 private:
-    int gpio_pin_switch;
-    int frequency;
-    int length_sec;
-    int relay_arr[MAX_RELAY_AMOUNT];
-    int relay_amount;
-    bool toggleable;
     bool activateTimer = false;
     bool switchOn;
     bool switchOnLastIteration;
     int iterations_per_second = ITERATIONS_PER_SECOND;
-
     int counter = 0; 
 
 public:
-    RelayTimer(int gpio_pin_switch_ = 0, int frequency_ = 0, int length_sec_ = 0,int relay_arr_[MAX_RELAY_AMOUNT] = {},int relay_amount_ = 0, bool toggleable_ = false) {
+    RelayTimer() {
+        gpio_pin_switch = 0;
+        frequency = 0;
+        length_sec = 0;
+        relay_arr[MAX_RELAY_AMOUNT] = {};
+        toggleable = 0;
+        dummy = true; //für leere Objekte
+    }
+
+    RelayTimer(int gpio_pin_switch_, int frequency_, int length_sec_,
+                int* relay_arr_,int relay_amount_, bool toggleable_) {
+        
         gpio_pin_switch = gpio_pin_switch_;
         frequency = frequency_;
         length_sec = length_sec_;
@@ -37,9 +38,23 @@ public:
             relay_arr[i] = relay_arr_[i];
         }
         toggleable = toggleable_;
-        
+        dummy = false; //für leere Objekte
+
+        initGPIO();
     }
+        int gpio_pin_switch;
+        int frequency;
+        int length_sec;
+        int relay_arr[MAX_RELAY_AMOUNT];
+        int relay_amount;
+        bool toggleable;
+        bool dummy;
+
+
     void initGPIO(){
+        if (dummy) { //checkt ob das Objekt benutzt werden soll
+            return;
+        }
         // Initialize Relais-Pins
         for (int i = 0; i < relay_amount; i++){
             gpio_init(relay_arr[i]);
@@ -53,6 +68,9 @@ public:
     }
 
     void routine(){
+        if (dummy) { //checkt ob das Objekt benutzt werden soll
+            return;
+        }
         //Bestimmung, ob Timer aktiv sein soll (Toggle oder Hold Modus)
         if(toggleable){
 		    //Wenn Schalter an ist und in der vorherigen Iteration aus war, dann wird activateTimer getogglet
@@ -79,14 +97,8 @@ public:
                 //(Wenn counter Vielfaches von ITERATIONS_PER_SECOND durch 2*frequency erreicht
                 // ==> da zweimal pro Periode Relais getoggelt wird (An und Aus))
                 int a = (counter - 1) % (iterations_per_second/(2*frequency));
-                printf("ergebnis1 = %d\n", a);
                 int b = (iterations_per_second/(2*frequency));
-                printf("ergebnis2 = %d\n", b);
-                
-                printf("iterations_per_second = %d\n", iterations_per_second);
-                printf("frequenzy = %d\n", frequency);
                 if((counter - 1) % (iterations_per_second/(2*frequency)) == 0){
-                    printf("toggle\n");
                     relaisToggle(relay_arr, relay_amount);
                 }
             }
@@ -109,7 +121,6 @@ public:
 private:
     //Funktion zum Togglen von Relais
     void relaisToggle(int relais_pin[], int amount){
-        printf("toggle pin method");
         for (int i = 0; i < amount; i++){
             printf("toggle pin %d\n", relais_pin[i]);
             if(gpio_get(relais_pin[i])){
