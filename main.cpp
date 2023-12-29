@@ -38,7 +38,7 @@ int main() {
         for (int b = 0; b < relayTimer_Amount; b++) {
             relayTimer_arr[b].routine();
         }
-        printf("\n");
+        //printf("\n");
     };
 }
 

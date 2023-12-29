@@ -83,3 +83,14 @@ public:
         return toggleable[index];
     }
 };
+
+class RequestData {
+private:
+    
+
+public:
+    RequestData(){
+        //const char WIFI_SSID[] = "TABLET";
+        //const char WIFI_PASSWORD[] = "12345678";
+    }
+};

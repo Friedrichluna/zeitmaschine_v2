@@ -78,7 +78,7 @@ public:
 		    if(switchOn && !switchOnLastIteration){
 			    //toggles activateTimer
 			    activateTimer = !activateTimer;
-                printf("switch %d toggled\n", gpio_pin_switch);
+                //printf("switch %d toggled\n", gpio_pin_switch);
 		    }   
 		//setzt switchOnLastIteration auf aktuellen Wert des Switches für die nächste Iteration
 		switchOnLastIteration = switchOn;
@@ -90,7 +90,7 @@ public:
 
         if(activateTimer){
             counter = counter + 1;
-            printf("switch %d on\n", gpio_pin_switch);
+            //printf("switch %d on\n", gpio_pin_switch);
             //Überprüft, ob Zeit abgelaufen ist oder Zeit auf 0 (Dauerbetrieb, solange Schalter an)
             if(counter < length_sec*iterations_per_second || length_sec == 0){
                 //überprüft, ob Relais getoggelt werden soll 
@@ -109,7 +109,7 @@ public:
         }
         else{
             //Wenn activateTimer false ist, wird counter auf 0 gesetzt und die Relais ausgeschalten
-            printf("switch %d off\n", gpio_pin_switch);
+            //printf("switch %d off\n", gpio_pin_switch);
             if(counter != 0){
                 counter = 0;
                 relaisReset(relay_arr, relay_amount);
@@ -122,7 +122,7 @@ private:
     //Funktion zum Togglen von Relais
     void relaisToggle(int relais_pin[], int amount){
         for (int i = 0; i < amount; i++){
-            printf("toggle pin %d\n", relais_pin[i]);
+            //printf("toggle pin %d\n", relais_pin[i]);
             if(gpio_get(relais_pin[i])){
                 gpio_put(relais_pin[i], 0);
             }

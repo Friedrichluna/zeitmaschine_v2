@@ -3,28 +3,34 @@
 #include "pico/stdlib.h"
 #include <stdio.h>
 
+#define RELAY_ARR_OFFSET 4
+
 // CGI handler which is run when a request for /value.cgi is detected
 const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
 {
+
     printf("frequency: %s\n", pcValue[0]);
     
     printf("length: %s\n", pcValue[1]);
 
     printf("toggleable: %s\n", pcValue[2]);
+
+    printf("button: %s\n", pcValue[3]);
     
     int numberRelaysSelected = 0;
-    int counter = 0;
     for(int i = 0; i < 16; i++){
-        numberRelaysSelected = numberRelaysSelected + atoi(pcValue[3 + i]); //"atoi" converts type "char *" to integer
+        if (strcmp(pcValue[RELAY_ARR_OFFSET + i], "end_of_array") == 0) {
+            numberRelaysSelected = i;
+            printf("numberRelaysSelected: %d\n", i);
+            break;
+        }
     }
 
     int selectedRelays[numberRelaysSelected] = {};
 
-    for(int j = 0; j < 16; j++){
-        if(strcmp(pcValue[3 + j], "1") == 0){
-            selectedRelays[counter] = j + 1;
-            counter = counter + 1;
-        }
+    for(int j = 0; j < numberRelaysSelected; j++){
+
+        selectedRelays[j] = atoi(pcParam[RELAY_ARR_OFFSET + j]);
     }
     
     printf("selected Relays: ");
@@ -42,7 +48,7 @@ const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char
 static const tCGI cgi_handlers[] = {
     {
         // Html request for "/led.cgi" triggers cgi_handler
-        "/value.cgi", cgi_value_handler
+        "/values.cgi", cgi_value_handler
     },
 };
 
