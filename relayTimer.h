@@ -42,13 +42,15 @@ public:
 
         initGPIO();
     }
-        int gpio_pin_switch;
-        int frequency;
-        int length_sec;
-        int relay_arr[MAX_RELAY_AMOUNT];
-        int relay_amount;
-        bool toggleable;
-        bool dummy;
+    int gpio_pin_switch;
+    int frequency;
+    int length_sec;
+    int relay_arr[MAX_RELAY_AMOUNT];
+    int relay_amount;
+    bool toggleable;
+    bool dummy;
+
+
 
 
     void initGPIO(){

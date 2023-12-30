@@ -1,23 +1,53 @@
 #include "pico/stdlib.h"
 #include "dfPlayerDriver.h"
 
-void doSomethingMusic() {
-    //DfPlayerPico
-    DfPlayerPico dfp;
+class MusicTimer
+{
+private:
+    bool dummy;
+    int button;
+    int folder;
+    int track;
+    bool repeat;
+    bool toggleable;
+public:
+    MusicTimer(){
+        bool dummy = true;
+    }
+    MusicTimer(int button_, int folder_, int track_, bool repeat_, bool toggleable_) {
+        button = button_;
+        folder = folder_;
+        track = track_; 
+        repeat = repeat_; //song wiederholt sich (bis er abgebrochen wird)
+        toggleable = toggleable_; //false: schalter gedrückt halten | true: einmal drücken --an, 2. mal drücken -->aus
+    }
 
-    dfp.reset();
-    sleep_ms(2000);
+    void routine() {
+        if (dummy) {
+            return;
+        }
+        //wenn der Schalter gedrückt wurde
+    }
 
-    dfp.specifyVolume(18);
-    sleep_ms(200);
+    void doSomethingMusic() {
+        //DfPlayerPico
+        DfPlayerPico dfp;
 
-    dfp.setRepeatPlay(true);
-    sleep_ms(200);
+        dfp.reset(); 
+        sleep_ms(1500); //braucht 1,5sek um SD auszulesen
 
-    dfp.next();
-    sleep_ms(200);
-}
+        dfp.specifyVolume(18); //0 bis 30
+        sleep_ms(100); //100ms zum befehl verarbeiten
 
+
+        dfp.sendCmd(dfPlayer::cmd::SPECIFY_FOLDER_PLAYBACK,0); //wählt ordner "00" in SD-Karte aus
+        sleep_ms(100); 
+        dfp.sendCmd(dfPlayer::cmd::SPECIFY_TRACKING,0); //wählt song: "000.mp3" aus ordner aus
+
+        dfp.sendCmd(dfPlayer::cmd::SPECIFY_PLAYBACK_MODE,0); //(0/1/2/3) Repeat/folder repeat/single repeat/random 
+        
+    }
+};
 
 //hallo Welt 2
 

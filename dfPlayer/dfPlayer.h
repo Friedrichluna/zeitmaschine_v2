@@ -18,7 +18,7 @@ namespace dfPlayer
         DEC_VOL = 0x05,
         SPECIFY_VOL = 0x06,
         SPECIFY_EQ = 0x07,
-        PECIFY_PLAYBACK_MODE = 0x08,
+        SPECIFY_PLAYBACK_MODE = 0x08,
         SPECIFY_PLAYBACK_SRC = 0x09,
         ENTER_STANDBY = 0x0a,
         NORMAL_WORKING = 0x0b,

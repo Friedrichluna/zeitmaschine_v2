@@ -12,14 +12,14 @@
 10087	10559	7255752400089421	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj	ac86a61d11b0c900
 229	616	7255752298598837	pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf	ee455eaffd7cc88b
 11229	11981	7255752411995243	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj	fcef71b2bc63c13
-528	1207	7255776130601340	pico_w_webserver.elf	361dd5b03e183ce6
+1398	5731	7256389317033569	pico_w_webserver.elf	361dd5b03e183ce6
 818	1199	7255752306622251	CMakeFiles/pico_w_webserver.dir/dfPlayer/dfPlayer.cpp.obj	91c78fb55f506649
 1937	2637	7255752320776776	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/src/common/pico_time/time.c.obj	32f2cddcd15f7b7f
 2956	3581	7255752330331647	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/core/memp.c.obj	8e631895f5c403e9
 698	814	7255752302747757	pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S	49f5db74918ff1c2
 616	698	7255752301620901	pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin	4e2af5b5fbd4bfa5
 4920	5489	7255752348258565	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/core/ipv6/ip6_addr.c.obj	8b5198559b24412f
-69	528	7255776127424662	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	6ed90dc9cb6be65f
+40	1398	7256389279285310	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	6ed90dc9cb6be65f
 4636	5012	7255752344474117	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/core/ipv6/dhcp6.c.obj	ce5ba59a4ba06a32
 38	154	7255752296185627	E:/Onedrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v2/zeitmaschine_v2/build/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.pio.h	f3cc29a66ef5c603
 616	698	7255752301620901	E:/Onedrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v2/zeitmaschine_v2/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin	4e2af5b5fbd4bfa5
@@ -152,7 +152,7 @@
 8482	9301	7255752386677336	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj	f513e2733ee761b9
 8025	9309	7255752387057062	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj	3fe2b85374e7223d
 9302	9894	7255752392257201	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj	19ac204a10e1d264
-76	334	7255776125434754	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/apps/http/fs.c.obj	5d3d95acde4d1c82
+44	1377	7256389279082460	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/apps/http/fs.c.obj	5d3d95acde4d1c82
 9206	9906	7255752392527315	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj	e8be3b206b56a2e5
 9309	9918	7255752392948195	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj	f9f37277c2be6a3f
 9244	9938	7255752393148186	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/apps/http/altcp_proxyconnect.c.obj	3808ef3459d7dd98
@@ -188,6 +188,15 @@
 11613	12493	7255752418023659	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj	536fea8cff324707
 12013	12529	7255752419778205	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/tinyusb/src/tusb.c.obj	7b3dd851a2c21632
 12413	12607	7255752420686411	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj	12ee3aacae4a5312
-41	248	7255789147668615	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/apps/http/fs.c.obj	5d3d95acde4d1c82
-50	395	7255789412965178	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	6ed90dc9cb6be65f
-396	1032	7255789416406047	pico_w_webserver.elf	361dd5b03e183ce6
+35	234	7256473258395670	CMakeFiles/pico_w_webserver.dir/E_/programs/PICO/pico-sdk/lib/lwip/src/apps/http/fs.c.obj	5d3d95acde4d1c82
+31	392	7256473259969636	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	6ed90dc9cb6be65f
+393	1858	7256473272187221	pico_w_webserver.elf	361dd5b03e183ce6
+45	194	7256498303960952	CMakeFiles/pico_w_webserver.dir/dfPlayer/dfPlayer.cpp.obj	91c78fb55f506649
+41	416	7256498306165477	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	6ed90dc9cb6be65f
+416	993	7256498309217308	pico_w_webserver.elf	361dd5b03e183ce6
+44	575	7256671782981793	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	6ed90dc9cb6be65f
+580	1616	7256671790658248	pico_w_webserver.elf	361dd5b03e183ce6
+40	656	7256679206672210	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	6ed90dc9cb6be65f
+659	1241	7256679210003620	pico_w_webserver.elf	361dd5b03e183ce6
+34	675	7256691005614605	CMakeFiles/pico_w_webserver.dir/main.cpp.obj	6ed90dc9cb6be65f
+676	1275	7256691008935731	pico_w_webserver.elf	361dd5b03e183ce6

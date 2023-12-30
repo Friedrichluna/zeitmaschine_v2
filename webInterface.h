@@ -56,6 +56,7 @@ public:
         printf("CGI Handler initialised\n");
     }
 
+    static RelayTimer relay_timer_arr[16];
     
 
     bool waiting_for_Input() {
@@ -66,31 +67,18 @@ public:
         return relayTimer_Amount;
     }
 
-    //array mit Arumenten für RelayTimer
-    int get_RelayTimer_gpio_pin_switch(int index){ 
-        return gpio_pin_switch[index];
-    }
-    int get_RelayTimer_frequency(int index){ 
-        return frequency[index];
-    }
-    int get_RelayTimer_length_sec(int index){ 
-        return length_sec[index];
-    }
-    int* get_RelayTimer_relay_arr(int index){ 
-        return relay_arr[index];
-    }
-    bool get_RelayTimer_toggleable(int index){ 
-        return toggleable[index];
+    static void setRelayTimer(int index, RelayTimer relayTimer){
+        relay_timer_arr[index] = relayTimer;
     }
 };
 
+
 class RequestData {
 private:
-    
-
 public:
-    RequestData(){
-        //const char WIFI_SSID[] = "TABLET";
-        //const char WIFI_PASSWORD[] = "12345678";
+    static RelayTimer relay_timer_arr[16];
+
+    static void setRelayTimer(int index, RelayTimer relayTimer){
+        relay_timer_arr[index] = relayTimer;
     }
 };

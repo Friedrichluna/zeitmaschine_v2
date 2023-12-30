@@ -3,6 +3,7 @@
 #include "pico/stdlib.h"
 #include <stdio.h>
 
+
 #define RELAY_ARR_OFFSET 4
 
 // CGI handler which is run when a request for /value.cgi is detected
@@ -10,12 +11,20 @@ const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char
 {
 
     printf("frequency: %s\n", pcValue[0]);
+    int frequency = atoi(pcValue[0]);
     
     printf("length: %s\n", pcValue[1]);
+    int length = atoi(pcValue[1]);
 
     printf("toggleable: %s\n", pcValue[2]);
+    bool toggleable;
+    if (strcmp(pcValue[2], "1") == 0)
+        toggleable = true;
+    else
+        toggleable = false;
 
     printf("button: %s\n", pcValue[3]);
+    int button = atoi(pcValue[3]);
     
     int numberRelaysSelected = 0;
     for(int i = 0; i < 16; i++){
@@ -40,6 +49,12 @@ const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char
     printf("\n");
 
     // Send the index page back to the user
+    RelayTimer relayTimer(button,frequency, length, selectedRelays, numberRelaysSelected, toggleable);
+    int index = 1; //TODOOOOOOOOOOOOOOOOOO
+
+
+    //RelayTimer::setRelayTimer(index, relayTimer);
+    
     return "/index.shtml";
 }
 
