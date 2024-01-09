@@ -1,8 +1,10 @@
+#ifndef RELAYTIMER_H
+#define RELAYTIMER_H
 #include <stdint.h>
 #include <stdio.h>
 #include "pico/stdlib.h"
 
-#define MAX_RELAY_TIMERS 32
+//#define MAX_RELAY_TIMERS 16
 #define MAX_RELAY_AMOUNT 16
 #define ITERATIONS_PER_SECOND 100;
 
@@ -141,3 +143,5 @@ private:
         }
     }
 };
+
+#endif /* RELAYTIMER_H */

@@ -2,9 +2,13 @@
 #include "pico/cyw43_arch.h"
 #include "pico/stdlib.h"
 #include <stdio.h>
+#include "musicTimer.h"
 
-
+#define RELAY_TIMER_AMOUNT 16
+#define MUSIC_TIMER_AMOUNT 16
 #define RELAY_ARR_OFFSET 4
+
+
 
 // CGI handler which is run when a request for /value.cgi is detected
 const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
@@ -53,7 +57,12 @@ const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char
     int index = 1; //TODOOOOOOOOOOOOOOOOOO
 
 
-    //RelayTimer::setRelayTimer(index, relayTimer);
+    RelayTimer relayTimer_arr[RELAY_TIMER_AMOUNT];
+    MusicTimer musicTimer_arr[MUSIC_TIMER_AMOUNT];
+    //Test test();
+
+    relayTimer_arr[index] = relayTimer;
+
     
     return "/index.shtml";
 }
