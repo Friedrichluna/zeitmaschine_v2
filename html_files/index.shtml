@@ -8,23 +8,42 @@
 <body>
 	<h1>Webserver Zeitmaschine</h1>
 	<br>
+    <p>Relais Timer 1: <!--#rt1--></p>
+    <p>Relais Timer 2: <!--#rt2--></p>
+    <p>Relais Timer 3: <!--#rt3--></p>
+    <p>Relais Timer 4: <!--#rt4--></p>
+    <p>Relais Timer 5: <!--#rt5--></p>
+    <p>Relais Timer 6: <!--#rt6--></p>
+    <p>Relais Timer 7: <!--#rt7--></p>
+    <p>Relais Timer 8: <!--#rt8--></p>
+    <p>Relais Timer 9: <!--#rt9--></p>
+    <p>Relais Timer 10: <!--#rt10--></p>
+    <p>Relais Timer 11: <!--#rt11--></p>
+    <p>Relais Timer 12: <!--#rt12--></p>
+    <p>Relais Timer 13: <!--#rt13--></p>
+    <p>Relais Timer 14: <!--#rt14--></p>
+    <p>Relais Timer 15: <!--#rt15--></p>
+    <p>Relais Timer 16: <!--#rt16--></p>
+	<br>
 	<p>Bitte tragen Sie die gewünschten Werte in die Felder ein und bestätigen Sie mit dem Button.</p>
 	<br>
 	<form action="values.cgi" method="get">
 		<p>Werte für Beleuchtung:</p>
 		<table id="bigTable" rules="rows" cellpadding="8">
 			<tr>
+				<td>Index im Array</td>
 				<td>Schalter für Aktivierung</td>
-				<td>Frequenz (in Hz)</td>
+				<td>Blinkanzahl pro 10s</td>
 				<td>Dauer (in s)</td>
-				<td>Betrieb als Druckknopf</td>
+				<td>Betrieb als Schalter <sup>1</sup></td>
 				<td>Anzusteuernde Relays</td>  
 			</tr>
 			<tr>
-				<td><input type="number" name="b" min="0" max="7" step="1" value="0"></td> <!--input for button-->
-				<td><input type="number" name="f" min="0" max="10"></td> <!--input for frequency-->
-				<td><input type="text" name="l"></td> <!--input for length-->
-				<td><input type="number" name="t" min="0" max="1" step="1" value="0"></td> <!--input for toggleable-->
+				<td><input type="number" name="i" min="0" max="15" value="0"></td>
+				<td><input type="number" name="b" min="0" max="7" value="0"></td> <!--input for button-->
+				<td><input type="number" name="f" min="0" max="30"></td> <!--input for frequency-->
+				<td><input type="number" name="l" min="0" value="0"></td> <!--input for length-->
+				<td><input type="number" name="t" min="0" max="1" value="0"></td> <!--input for toggleable-->
 				<td>
 					<label><input type="checkbox" name="1" value="1">1</label>
 					<label><input type="checkbox" name="2" value="1">2</label>
@@ -56,6 +75,7 @@
 		<p>Werte für Ton-/Musikausgabe:</p>
 		<table id="bigMusicTable" rules="rows" cellpadding="8">
 			<tr>
+				<td>Index im Array</td>
 				<td>Schalter für Aktivierung</td>
 				<td>Ordner</td>
 				<td>Track</td>
@@ -63,6 +83,7 @@
 				<td>Schalter als Druckknopf</td>
 			</tr>
 			<tr>
+				<td><input type="number" name="im" min="0" max="15" value="0"></td>
 				<td><input type="number" name="bumu" min="0" max="7" step="1" value="0"></td> <!--input for button-->
 				<td><input type="number" name="fo" min="0" max="100" step="1" value="0"></td> <!--input for folder-->
 				<td><input type="number" name="tr" min="0" max="999" step="1" value="0"></td> <!--input for track-->
@@ -76,4 +97,7 @@
 		</div>
 	</form>
 </body>
+<footer>
+	<p><sup>1</sup> 0...Schalter muss gedrückt gehalten werden, damit Wiedergabe erfolgt; 1...Wiedergabe wird mit Drücken des Tasters gestartet, Ende durch erneutes Drücken oder abgelaufene Zeit</p>
+</footer>
 </html>

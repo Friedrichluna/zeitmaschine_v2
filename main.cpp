@@ -39,10 +39,10 @@ int main() {
     ta.setMusicTimer(musicTimer_arr);
     
 
-    while (wi.waiting_for_Input()) {
+    while (!ta.get_timers_got_updated()) {
         sleep_ms(100);
     }
-
+    printf("succsess2");
     for (int i = 0; i < RELAY_TIMER_AMOUNT; i++){
         relayTimer_arr[i] = ta.getRelayTimer(i); //zieht Objekt wieder aus flash memory
     }
@@ -63,7 +63,7 @@ int main() {
     musicTimer_arr[0] = newMusicTimer1;
     musicTimer_arr[5] = newMusicTimer2;
 
-    if(wi.get_timers_got_updated()){
+    if(ta.get_timers_got_updated()){
         ds.flash_objects(relayTimer_arr, RELAY_TIMER_AMOUNT, musicTimer_arr, MUSIC_TIMER_AMOUNT);
     }
     

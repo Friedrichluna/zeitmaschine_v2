@@ -1,14 +1,19 @@
 #ifndef TIMERARRAYS_H
 #define TIMERARRAYS_H
+#include "musicTimer.h"
+#include "relayTimer.h"
 
 #define RELAY_TIMER_AMOUNT 16
 #define MUSIC_TIMER_AMOUNT 16
+
 
 class TimerArrays{
     private:
         TimerArrays(){}
         RelayTimer relayTimer_arr[RELAY_TIMER_AMOUNT]; //array mit leeren relayTimern
         MusicTimer musicTimer_arr[MUSIC_TIMER_AMOUNT];
+
+        bool timers_got_updated = false;  
     public:
         static TimerArrays& getInstance(){
                 static TimerArrays instance;
@@ -40,6 +45,13 @@ class TimerArrays{
                 musicTimer_arr[i] = musicTimer_arr_[i];
             }
         }
+
+        void set_timers_got_updated(){
+        timers_got_updated = true;
+        }
+        bool get_timers_got_updated(){
+            return timers_got_updated;
+    }
 };
 
 

@@ -1,42 +1,26 @@
 #include "lwip/apps/httpd.h"
 #include "pico/cyw43_arch.h"
 #include "hardware/adc.h"
+#include "timerArrays.h"
+
+
+#define RELAY_TIMER_AMOUNT 16
+#define MUSIC_TIMER_AMOUNT 16
 
 // SSI tags - tag length limited to 8 bytes by default
-const char * ssi_tags[] = {"volt","temp","led"};
+const char * ssi_tags[] = {"rt1","rt2","rt3","rt4","rt5","rt6","rt7","rt8","rt9","rt10","rt11","rt12","rt13","rt14","rt15","rt16",
+"mt1","mt2","mt3","mt4","mt5","mt6","mt7","mt8","mt9","mt10","mt11","mt12","mt13","mt14","mt15","mt16"};
 
 u16_t ssi_handler(int iIndex, char *pcInsert, int iInsertLen) {
   size_t printed;
-  switch (iIndex) {
-  case 0: // volt
-    {
-      const float voltage = adc_read() * 3.3f / (1 << 12);
-      printed = snprintf(pcInsert, iInsertLen, "%f", voltage);
-    }
-    break;
-  case 1: // temp
-    {
-    const float voltage = adc_read() * 3.3f / (1 << 12);
-    const float tempC = 27.0f - (voltage - 0.706f) / 0.001721f;
-    printed = snprintf(pcInsert, iInsertLen, "%f", tempC);
-    }
-    break;
-  case 2: // led
-    {
-      bool led_status = cyw43_arch_gpio_get(CYW43_WL_GPIO_LED_PIN);
-      if(led_status == true){
-        printed = snprintf(pcInsert, iInsertLen, "ON");
-      }
-      else{
-        printed = snprintf(pcInsert, iInsertLen, "OFF");
-      }
-    }
-    break;
-  default:
-    printed = 0;
-    break;
-  }
+  TimerArrays& ta = TimerArrays::getInstance();
 
+  if(0 <= iIndex < RELAY_TIMER_AMOUNT){
+    printed = snprintf(pcInsert, iInsertLen, ta.getRelayTimer(iIndex).toString());
+  }
+  else{
+    printed = 0;
+  }
   return (u16_t)printed;
 }
 

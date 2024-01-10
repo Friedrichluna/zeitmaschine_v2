@@ -2,6 +2,7 @@
 #define RELAYTIMER_H
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "pico/stdlib.h"
 
 //#define MAX_RELAY_TIMERS 16
@@ -69,6 +70,17 @@ public:
         gpio_set_dir(gpio_pin_switch, GPIO_IN);
         gpio_pull_up(gpio_pin_switch);
         switchOnLastIteration = !gpio_get(gpio_pin_switch);
+    }
+
+    char* toString(){
+        char* result = (char*)malloc(100); 
+        if(!dummy){
+            sniprintf(result, 100, "Schalter: %d   Frequenz: %d pro 10 s   Länge: %d Sekunden   Anzahl relais: %d", gpio_pin_switch, frequency, length_sec, relay_amount);
+        }
+        else{
+            sniprintf(result, 100, "Timer nicht belegt!");
+        }
+        return result;
     }
 
     void routine(){
