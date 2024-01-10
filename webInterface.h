@@ -25,6 +25,8 @@ private:
     int relay_arr[MAX_RELAY_TIMERS][MAX_RELAY_AMOUNT] = {{}};
     bool toggleable[MAX_RELAY_TIMERS] = {};
 
+    bool timers_got_updated = false;
+
 public:
     WebInterface(){
         //const char WIFI_SSID[] = "TABLET";
@@ -71,15 +73,11 @@ public:
     static void setRelayTimer(int index, RelayTimer relayTimer){
         relay_timer_arr[index] = relayTimer;
     }
-};
-
-
-class RequestData {
-private:
-public:
-    static RelayTimer relay_timer_arr[16];
-
-    static void setRelayTimer(int index, RelayTimer relayTimer){
-        relay_timer_arr[index] = relayTimer;
+    
+    void set_timers_got_updated(){
+        timers_got_updated = true;
+    }
+    bool get_timers_got_updated(){
+        return timers_got_updated;
     }
 };

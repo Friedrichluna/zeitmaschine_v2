@@ -14,8 +14,6 @@
 int map_button(int index);
 int map_relay(int index);
 
-extern RelayTimer relayTimer_arr[RELAY_TIMER_AMOUNT]; //array mit leeren relayTimern
-extern MusicTimer musicTimer_arr[MUSIC_TIMER_AMOUNT];
 
 int main() {
     stdio_init_all(); //initialisiert Pico
@@ -29,7 +27,8 @@ int main() {
     DataSaver ds;
     WebInterface wi = WebInterface(); //erstellt webinterface Objekt
     wi.init_webInterface(); //initialisiert Webinterface
-
+    
+    //ds.print_buf_int(64*32);
     for (int i = 0; i < RELAY_TIMER_AMOUNT; i++){
         relayTimer_arr[i] = ds.recover_relayTimer(i); //zieht Objekt wieder aus flash memory
     }
@@ -38,8 +37,7 @@ int main() {
         musicTimer_arr[i] = ds.recover_musicTimer(i, RELAY_TIMER_AMOUNT); //zieht Objekt wieder aus flash memory
     }
     ta.setMusicTimer(musicTimer_arr);
-    printf("button = %d\n", musicTimer_arr[0].button);
-
+    
 
     while (wi.waiting_for_Input()) {
         sleep_ms(100);
@@ -60,8 +58,15 @@ int main() {
     relayTimer_arr[1] = newRelayTimer2;
 
     
-    MusicTimer newMusicTimer1(17, 1, 1, true, false);
+    MusicTimer newMusicTimer1(map_button(1), 1, 1, true, false);
+    MusicTimer newMusicTimer2(map_button(5), 5, 5, true, false);
     musicTimer_arr[0] = newMusicTimer1;
+    musicTimer_arr[5] = newMusicTimer2;
+
+    if(wi.get_timers_got_updated()){
+        ds.flash_objects(relayTimer_arr, RELAY_TIMER_AMOUNT, musicTimer_arr, MUSIC_TIMER_AMOUNT);
+    }
+    
 
 
     while(true) {
@@ -72,7 +77,6 @@ int main() {
         for (int b = 0; b < MUSIC_TIMER_AMOUNT; b++) {
             musicTimer_arr[b].routine();
         }
-        //printf("\n");
     };
 }
 

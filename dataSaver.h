@@ -41,6 +41,7 @@ public:
 
     void print_buf_int(int len) {
         u_int16_t* buf = (u_int16_t*) getAddressPersistent();
+        int counter = 0;
         for (size_t i = 0; i < len; ++i) {
             printf("%05d", buf[i]);
             if (i % 8 == 7)
@@ -51,9 +52,10 @@ public:
                 printf("|");
             else
                 printf(" ");
-            if (i % 32 == 31)
-                printf("%d\n",i);
-            
+            if (i % 32 == 31) {
+                counter++;
+                printf("%d\n",counter);
+            }
         }
     }
 
@@ -69,7 +71,7 @@ public:
 
     void flash_objects(RelayTimer* relayTimer_array, int length_rt, MusicTimer* musicTimer_array, int length_mt) {
         int saver_array[(flash_array_length/2)*(length_rt+length_mt)];
-        
+        printf("\nstarting flash\n");
         
         for (int i = 0; i < length_rt; i++) {
             int shift = i*32;
@@ -135,7 +137,7 @@ public:
         flash_range_program(flash_target_offset, saver_array_int8 , flash_array_length*(length_rt+length_mt));
         restore_interrupts(ints_);
         printf("done\n");
-        print_buf_int(FLASH_SECTOR_SIZE);;
+        print_buf_int(flash_array_length*(length_rt+length_mt));
         
 
 
@@ -172,6 +174,7 @@ public:
         else {
             dummy = false;
             RelayTimer relayTimer(gpio_pin_switch, frequency, length_sec, relay_arr, relay_amount, toggleable);
+            printf("recovered: relayTimer[%d]\n",index);
         }
         return relayTimer;
     }
@@ -198,15 +201,15 @@ public:
         else {
             toggleable = false;
         }
-        MusicTimer musicTimer; //erstellt dummy objekt
+        
         bool dummy;
-        if (this_relays_pointer[5 + shift] == 1) {
+        if (this_relays_pointer[5 + shift] != 0) {
             dummy = true;
+            MusicTimer musicTimer;  //erstellt dummy objekt
+            return musicTimer;
         }
-        else {
-            dummy = false;
-            MusicTimer musicTimer(button, folder, track, repeat, toggleable);
-        }
+        MusicTimer musicTimer(button, folder, track, repeat, toggleable);
+        printf("recovered: MusicTimer[%d]\n",index);
         return musicTimer;
     }
 };

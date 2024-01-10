@@ -54,7 +54,7 @@ public:
 		    if(buttonOn && !buttonLastIteration){
 			    //toggles activateTimer
 			    activateMusic = !activateMusic;
-                printf("activate Toggle \n");
+                //printf("activate Toggle \n");
                 //printf("switch %d toggled\n", gpio_pin_switch);
 		    }   
 		//setzt switchOnLastIteration auf aktuellen Wert des Switches für die nächste Iteration
@@ -63,16 +63,16 @@ public:
 	    else{
             //Wenn toggleable auf false ist, wird activateTimer true, solange button gedrückt ist
 		    activateMusic = !gpio_get(button);
-            printf("aM = %d \n", activateMusic);
+            //printf("aM = %d \n", activateMusic);
 	    }
 
         if(activateMusic){//Anschalten der Musik
             musicAn();
-            printf("musicOn = %d, ", musicOn);
+            //printf("musicOn = %d, ", musicOn);
         }
         if(!activateMusic){//stoppen der MusiK
             musicAus();
-            printf("musicOn = %d ,", musicOn);
+            //printf("musicOn = %d ,", musicOn);
         }
     }
 
@@ -93,8 +93,8 @@ public:
     
 
     void ausgabeWerte(){
-       printf("aM= %d ", activateMusic);
-       printf("bO= %d \n", buttonOn);
+       //printf("aM= %d ", activateMusic);
+       //printf("bO= %d \n", buttonOn);
     }
 
     void playMusic(){
@@ -106,7 +106,7 @@ public:
         dfp.sendCmd(dfPlayer::cmd::SPECIFY_FOLDER_PLAYBACK,folder); //wählt ordner "01" in SD-Karte aus
         sleep_ms(100);
         dfp.sendCmd(dfPlayer::cmd::SPECIFY_TRACKING,track); //wählt song: "002.mp3" aus ordner aus
-        printf("play ");
+        //printf("play ");
         sleep_ms(100);
         if(repeat){
             dfp.sendCmd(dfPlayer::cmd::SPECIFY_PLAYBACK_MODE,track);
@@ -120,7 +120,7 @@ public:
         DfPlayerPico dfp;
         //dfp.sendCmd(dfPlayer::cmd::STOP,00); //funktioniert nicht
         dfp.specifyVolume(0); //0 bis 30, setzt die Lautstärke auf 0 = Stoppen der Musik
-        printf("Stop \n");
+        //printf("Stop \n");
         sleep_ms(100);
     }
 };
