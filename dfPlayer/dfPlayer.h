@@ -27,7 +27,8 @@ namespace dfPlayer
         PAUSE = 0x0e,
         SPECIFY_FOLDER_PLAYBACK = 0x0f,
         VOL_ADJ_SET = 0x10,
-        REPEAT_PLAY = 0x11
+        REPEAT_PLAY = 0x11,
+        STOP = 0x16 //selbst hinzugefügt
     };
 
     enum serialCommFormat

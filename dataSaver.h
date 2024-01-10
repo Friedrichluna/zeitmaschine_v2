@@ -10,7 +10,7 @@
 
 class DataSaver {
 private:
-    
+    int flash_array_length = 64;
 public:
     DataSaver(){
         data_saver_init();
@@ -35,7 +35,7 @@ public:
             else
                 printf(" ");
             if (i % 64 == 63)
-                printf("\n");
+                printf("%d\n",i);
         }
     }
 
@@ -52,7 +52,7 @@ public:
             else
                 printf(" ");
             if (i % 32 == 31)
-                printf("\n");
+                printf("%d\n",i);
             
         }
     }
@@ -67,12 +67,11 @@ public:
     }
 
 
-    void flash_objects(RelayTimer* relayTimer_array, int length) {
-        int flash_array_length = 64;
-        int saver_array[(flash_array_length/2)*length];
+    void flash_objects(RelayTimer* relayTimer_array, int length_rt, MusicTimer* musicTimer_array, int length_mt) {
+        int saver_array[(flash_array_length/2)*(length_rt+length_mt)];
         
         
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < length_rt; i++) {
             int shift = i*32;
             
             saver_array[0 + shift] = relayTimer_array[i].gpio_pin_switch;
@@ -95,8 +94,35 @@ public:
                 saver_array[20 + shift] = 0;
             }
         }
-        u_int8_t saver_array_int8[flash_array_length*length];
-        for (int i = 0; i < flash_array_length*length; i++) {
+        for (int i = 0; i < length_mt; i++) {
+            int shift = i*32 + (flash_array_length/2)*length_rt;
+            
+            saver_array[0 + shift] = musicTimer_array[i].button;
+            saver_array[1 + shift] = musicTimer_array[i].folder;
+            saver_array[2 + shift] = musicTimer_array[i].track;
+            if (musicTimer_array[i].repeat) {
+                saver_array[3 + shift] = 1;
+            }
+            else {
+                saver_array[3 + shift] = 0;
+            }
+
+            if (musicTimer_array[i].toggleable) {
+                saver_array[4 + shift] = 1;
+            }
+            else {
+                saver_array[4 + shift] = 0;
+            }
+
+            if (musicTimer_array[i].dummy) {
+                saver_array[5 + shift] = 1;
+            }
+            else {
+                saver_array[5 + shift] = 0;
+            }
+        }
+        u_int8_t saver_array_int8[flash_array_length*(length_rt+length_mt)];
+        for (int i = 0; i < flash_array_length*(length_rt+length_mt); i++) {
             saver_array_int8[2 * i + 1] = (u_int8_t) (saver_array[i] >> 8);
             saver_array_int8[2 * i] = (u_int8_t) (saver_array[i]);
         }
@@ -106,10 +132,10 @@ public:
         erase_target_flash();
         printf("\nProgramming target region...\n");
         uint32_t ints_ = save_and_disable_interrupts(); 
-        flash_range_program(flash_target_offset, saver_array_int8 , flash_array_length*length);
+        flash_range_program(flash_target_offset, saver_array_int8 , flash_array_length*(length_rt+length_mt));
         restore_interrupts(ints_);
         printf("done\n");
-        //print_buf_int(FLASH_SECTOR_SIZE);;
+        print_buf_int(FLASH_SECTOR_SIZE);;
         
 
 
@@ -120,7 +146,7 @@ public:
 
 
     RelayTimer recover_relayTimer(int index) {
-        int shift = index*32;
+        int shift = index*(flash_array_length/2);
         u_int16_t* this_relays_pointer = (u_int16_t*) getAddressPersistent();
 
         int gpio_pin_switch = (int) this_relays_pointer[0 + shift];
@@ -148,6 +174,40 @@ public:
             RelayTimer relayTimer(gpio_pin_switch, frequency, length_sec, relay_arr, relay_amount, toggleable);
         }
         return relayTimer;
+    }
+
+    MusicTimer recover_musicTimer(int index, int length_rt) {
+        int shift = index*32 + (flash_array_length/2)*length_rt;
+        u_int16_t* this_relays_pointer = (u_int16_t*) getAddressPersistent();
+
+        int button = (int) this_relays_pointer[0 + shift];
+        int folder = (int) this_relays_pointer[1 + shift];
+        int track = (int) this_relays_pointer[2 + shift];
+        bool repeat;
+        if (this_relays_pointer[3 + shift] == 1) {
+            repeat = true;
+        }
+        else {
+            repeat = false;
+        }
+
+        bool toggleable;
+        if (this_relays_pointer[4 + shift] == 1) {
+            toggleable = true;
+        }
+        else {
+            toggleable = false;
+        }
+        MusicTimer musicTimer; //erstellt dummy objekt
+        bool dummy;
+        if (this_relays_pointer[5 + shift] == 1) {
+            dummy = true;
+        }
+        else {
+            dummy = false;
+            MusicTimer musicTimer(button, folder, track, repeat, toggleable);
+        }
+        return musicTimer;
     }
 };
 
