@@ -6,11 +6,11 @@
 #include "ssi.h"
 #include "cgi.h"
 
-
 #define MAX_RELAY_TIMERS 32
 #define MAX_RELAY_AMOUNT 16
 
 #define CONNECTION_TIMEOUT_MS 5000
+
 
 
 
@@ -54,7 +54,6 @@ public:
         printf("SSI Handler initialised\n");
         cgi_init();
         printf("CGI Handler initialised\n");
-        
     }
 
     static RelayTimer relay_timer_arr[16];

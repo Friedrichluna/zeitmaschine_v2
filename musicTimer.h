@@ -1,5 +1,3 @@
-#ifndef MUSICTIMER_H
-#define MUSICTIMER_H
 #include "pico/stdlib.h"
 #include "dfPlayerDriver.h"
 
@@ -42,13 +40,16 @@ public:
         sleep_ms(100); //100ms zum befehl verarbeiten
 
 
-        dfp.sendCmd(dfPlayer::cmd::SPECIFY_FOLDER_PLAYBACK,5); //wählt ordner "00" in SD-Karte aus
+        dfp.sendCmd(dfPlayer::cmd::SPECIFY_FOLDER_PLAYBACK,0); //wählt ordner "00" in SD-Karte aus
         sleep_ms(100); 
-        dfp.sendCmd(dfPlayer::cmd::SPECIFY_TRACKING,5); //wählt song: "000.mp3" aus ordner aus
-        sleep_ms(100); 
+        dfp.sendCmd(dfPlayer::cmd::SPECIFY_TRACKING,0); //wählt song: "000.mp3" aus ordner aus
+
         dfp.sendCmd(dfPlayer::cmd::SPECIFY_PLAYBACK_MODE,0); //(0/1/2/3) Repeat/folder repeat/single repeat/random 
         
     }
 };
 
-#endif /* MUSICTIMER_H */
+//hallo Welt 2
+
+
+//test

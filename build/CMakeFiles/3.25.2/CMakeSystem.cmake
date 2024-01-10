@@ -1,9 +1,9 @@
-set(CMAKE_HOST_SYSTEM "Windows-10.0.19045")
+set(CMAKE_HOST_SYSTEM "Windows-10.0.18363")
 set(CMAKE_HOST_SYSTEM_NAME "Windows")
-set(CMAKE_HOST_SYSTEM_VERSION "10.0.19045")
+set(CMAKE_HOST_SYSTEM_VERSION "10.0.18363")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "AMD64")
 
-include("D:/programs/Pico Installer/pico-sdk/cmake/preload/toolchains/pico_arm_gcc.cmake")
+include("E:/programs/PICO/pico-sdk/cmake/preload/toolchains/pico_arm_gcc.cmake")
 
 set(CMAKE_SYSTEM "PICO")
 set(CMAKE_SYSTEM_NAME "PICO")
