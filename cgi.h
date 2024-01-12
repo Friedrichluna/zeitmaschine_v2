@@ -9,7 +9,8 @@
 #define MUSIC_TIMER_AMOUNT 16
 #define RELAY_ARR_OFFSET 5
 
-
+int map_button(int index);
+int map_relay(int index);
 
 // CGI handler which is run when a request for /value.cgi is detected
 const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
@@ -18,7 +19,7 @@ const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char
     int index = atoi(pcValue[0]);
 
     printf("button: %s\n", pcValue[1]);
-    int button = atoi(pcValue[1]);
+    int button = map_button(atoi(pcValue[1]));
 
     printf("frequency: %s\n", pcValue[2]);
     int frequency = atoi(pcValue[2]);
@@ -46,7 +47,7 @@ const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char
 
     for(int j = 0; j < numberRelaysSelected; j++){
 
-        selectedRelays[j] = atoi(pcParam[RELAY_ARR_OFFSET + j]);
+        selectedRelays[j] = map_relay(atoi(pcParam[RELAY_ARR_OFFSET + j]));
     }
     printf("numberrelysselected: %d\n",numberRelaysSelected);
     printf("selected Relays: ");
@@ -56,11 +57,19 @@ const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char
     printf("\n");
 
     // Send the index page back to the user
-    RelayTimer relayTimer(button, frequency, length, selectedRelays, numberRelaysSelected, toggleable);
+    
     
     TimerArrays& ta = TimerArrays::getInstance();
-    ta.replaceRelayTimer(index, relayTimer);
-    ta.set_timers_got_updated();
+    
+    if(numberRelaysSelected == 0){
+        RelayTimer relayTimer;
+        ta.replaceRelayTimer(index, relayTimer);
+    }
+    else{
+        RelayTimer relayTimer(button,frequency, length, selectedRelays, numberRelaysSelected, toggleable);
+        ta.replaceRelayTimer(index, relayTimer);
+    }
+
     printf("succsess");
     return "/index.shtml";
 }
@@ -98,10 +107,24 @@ const char * cgi_music_handler(int iIndex, int iNumParams, char *pcParam[], char
         toggleableMusic = false;
         printf("toggleableMusic: No");
     }
-    MusicTimer musicTimer(buttonMusic, folder, track, repeat, toggleableMusic);
     
     TimerArrays& ta = TimerArrays::getInstance();
-    ta.replacemMusicTimer(indexMusic, musicTimer);
+    
+    if(strcmp(pcValue[6], "1") == 0){
+        MusicTimer musicTimer;
+        ta.replacemMusicTimer(indexMusic, musicTimer);
+    }
+    else{
+        MusicTimer musicTimer(buttonMusic, folder, track, repeat, toggleableMusic);
+        ta.replacemMusicTimer(indexMusic, musicTimer);
+    }
+
+    return "/index.shtml";
+}
+
+const char * cgi_start_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[]){
+    printf("start\n");
+    TimerArrays& ta = TimerArrays::getInstance();
     ta.set_timers_got_updated();
     return "/index.shtml";
 }
@@ -117,9 +140,13 @@ static const tCGI cgi_handlers[] = {
         // Html request for "/music.cgi" triggers cgi_handler
         "/music.cgi", cgi_music_handler
     },
+    {
+        // Html request for "/music.cgi" triggers cgi_handler
+        "/start.cgi", cgi_start_handler
+    },
 };
 
 void cgi_init(void)
 {
-    http_set_cgi_handlers(cgi_handlers, 2);
+    http_set_cgi_handlers(cgi_handlers, 3);
 }

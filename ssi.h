@@ -15,8 +15,14 @@ u16_t ssi_handler(int iIndex, char *pcInsert, int iInsertLen) {
   size_t printed;
   TimerArrays& ta = TimerArrays::getInstance();
 
-  if(0 <= iIndex < RELAY_TIMER_AMOUNT){
+  //printf("SSI Index: %d\n", iIndex);
+  if(0 <= iIndex && iIndex < RELAY_TIMER_AMOUNT){
+    //printf("Trying to SSI print RelayTimer, %d\n", iIndex);
     printed = snprintf(pcInsert, iInsertLen, ta.getRelayTimer(iIndex).toString());
+  }
+  else if(RELAY_TIMER_AMOUNT <= iIndex && iIndex < MUSIC_TIMER_AMOUNT+RELAY_TIMER_AMOUNT){
+    //printf("Trying to SSI print MusicTimer, %d\n", iIndex);
+    printed = snprintf(pcInsert, iInsertLen, ta.getMusicTimer(iIndex-RELAY_TIMER_AMOUNT).toString());
   }
   else{
     printed = 0;

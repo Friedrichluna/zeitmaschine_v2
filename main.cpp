@@ -13,6 +13,7 @@
 
 int map_button(int index);
 int map_relay(int index);
+void printRelayTimer(RelayTimer relyTimer, int index);
 
 
 int main() {
@@ -28,9 +29,10 @@ int main() {
     WebInterface wi = WebInterface(); //erstellt webinterface Objekt
     wi.init_webInterface(); //initialisiert Webinterface
     
-    //ds.print_buf_int(64*32);
+    ds.print_buf_int(64*32);
     for (int i = 0; i < RELAY_TIMER_AMOUNT; i++){
         relayTimer_arr[i] = ds.recover_relayTimer(i); //zieht Objekt wieder aus flash memory
+        
     }
     ta.setRelayTimer(relayTimer_arr);
     for (int i = 0; i < MUSIC_TIMER_AMOUNT; i++){
@@ -42,7 +44,8 @@ int main() {
     while (!ta.get_timers_got_updated()) {
         sleep_ms(100);
     }
-    printf("succsess2");
+    printf("Save and start\n");
+
     for (int i = 0; i < RELAY_TIMER_AMOUNT; i++){
         relayTimer_arr[i] = ta.getRelayTimer(i); //zieht Objekt wieder aus flash memory
     }
@@ -50,23 +53,10 @@ int main() {
         musicTimer_arr[i] = ta.getMusicTimer(i); //zieht Objekt wieder aus flash memory
     }
 
-    int relay_arr1[3] = {map_relay(2), map_relay(1), map_relay(3)};
-    int relay_arr2[1] = {map_relay(4)};
-    RelayTimer newRelayTimer1(map_button(1), 2, 0, relay_arr1, 3, false);
-    RelayTimer newRelayTimer2(map_button(2), 3, 0, relay_arr2, 1, true);
-    relayTimer_arr[0] = newRelayTimer1;
-    relayTimer_arr[1] = newRelayTimer2;
-
-    
-    MusicTimer newMusicTimer1(map_button(1), 1, 1, true, false);
-    MusicTimer newMusicTimer2(map_button(5), 5, 5, true, false);
-    musicTimer_arr[0] = newMusicTimer1;
-    musicTimer_arr[5] = newMusicTimer2;
-
     if(ta.get_timers_got_updated()){
+        //ds.erase_target_flash();
         ds.flash_objects(relayTimer_arr, RELAY_TIMER_AMOUNT, musicTimer_arr, MUSIC_TIMER_AMOUNT);
     }
-    
 
 
     while(true) {
@@ -77,6 +67,7 @@ int main() {
         for (int b = 0; b < MUSIC_TIMER_AMOUNT; b++) {
             musicTimer_arr[b].routine();
         }
+        printf("\n");
     };
 }
 
@@ -89,4 +80,13 @@ int map_button(int index) {
 int map_relay(int index) {
     int relay_arr[16] = {7,10,11,12,13,14,15,16,17,28,19,20,21,22,26,27};
     return relay_arr[index-1];
+}
+
+void printRelayTimer(RelayTimer relyTimer, int index){
+    if(relyTimer.dummy){
+        printf("relytimer %d is a dummy\n", index);
+    }
+    else {
+        printf("relytimer %d is not a dummy\n", index);
+    }
 }

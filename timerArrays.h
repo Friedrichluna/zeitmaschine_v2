@@ -13,7 +13,7 @@ class TimerArrays{
         RelayTimer relayTimer_arr[RELAY_TIMER_AMOUNT]; //array mit leeren relayTimern
         MusicTimer musicTimer_arr[MUSIC_TIMER_AMOUNT];
 
-        bool timers_got_updated = false;  
+        bool timers_got_updated = false;
     public:
         static TimerArrays& getInstance(){
                 static TimerArrays instance;
@@ -31,6 +31,7 @@ class TimerArrays{
         void setRelayTimer(RelayTimer* relayTimer_arr_){
             for (int i = 0; i < RELAY_TIMER_AMOUNT; i++) {
                 relayTimer_arr[i] = relayTimer_arr_[i];
+                //printRelayTimer(relayTimer_arr_[i], i);
             }
         }
         
@@ -51,7 +52,16 @@ class TimerArrays{
         }
         bool get_timers_got_updated(){
             return timers_got_updated;
-    }
+        }
+
+        void printRelayTimer(RelayTimer relyTimer, int index){
+            if(relyTimer.dummy){
+                printf("relytimer %d is a dummy\n", index);
+            }
+            else {
+                printf("relytimer %d is not a dummy\n", index);
+            }
+        }
 };
 
 

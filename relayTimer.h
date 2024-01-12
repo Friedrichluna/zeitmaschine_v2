@@ -3,11 +3,12 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <cstring>
 #include "pico/stdlib.h"
 
 //#define MAX_RELAY_TIMERS 16
 #define MAX_RELAY_AMOUNT 16
-#define ITERATIONS_PER_SECOND 100;
+#define ITERATIONS_PER_SECOND (100*10); 
 
 
 
@@ -73,12 +74,20 @@ public:
     }
 
     char* toString(){
-        char* result = (char*)malloc(100); 
+        char* result = (char*)malloc(130); 
         if(!dummy){
-            sniprintf(result, 100, "Schalter: %d   Frequenz: %d pro 10 s   Länge: %d Sekunden   Anzahl relais: %d", gpio_pin_switch, frequency, length_sec, relay_amount);
+            sniprintf(result, 130, "Schalter: %d  Frequenz: %d (pro 10 Sekunden)   Länge: %d Sekunden Schalterbetrieb: %d   Anzahl Relais: %d  Relais: ", gpio_pin_switch, frequency, length_sec,toggleable, relay_amount);
+            //printf("toString Funktion Relay Amount: %d", relay_amount);
+            for(int i = 0; i < relay_amount; i++){
+                //printf("toString Funktion Relay: %d\n", relay_arr[i]);
+                char relay[4];
+                sniprintf(relay, 4, " %d", relay_arr[i]);
+                strcat(result, relay);
+            }
+
         }
         else{
-            sniprintf(result, 100, "Timer nicht belegt!");
+            sniprintf(result, 130, "Timer nicht belegt!");
         }
         return result;
     }

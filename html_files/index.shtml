@@ -140,27 +140,30 @@
 			<b>Werte für Ton-/Musikausgabe:</b>
 			<table id="bigMusicTable" rules="rows" cellpadding="8">
 				<tr>
-					<td>Index im Array</td>
-					<td>Welcher Schalter?</td>
-					<td>Ordner</td>
-					<td>Track</td>
-					<td>Wiederholende Wiedergabe</td>
-					<td>Betrieb als Schalter <sup>1</sup></td>
-				</tr>
-				<tr>
-					<td><input type="number" size="12" name="im" min="0" max="15" value="0"></td>
-					<td><input type="number" size="15" name="bumu" min="0" max="7" step="1" value="0"></td> <!--input for button-->
-					<td><input type="number" size="12" name="fo" min="0" max="100" step="1" value="0"></td> <!--input for folder-->
-					<td><input type="number" size="12" name="tr" min="0" max="999" step="1" value="0"></td> <!--input for track-->
-					<td><input type="number" size="25" name="re" min="0" max="1" step="1" value="0"></td> <!--input for repeat-->
-					<td><input type="number" name="tomu" min="0" max="1" step="1" value="0"></td> <!--input for toggleable-->
-				</tr>
+                    <td>Index im Array</td>
+                    <td>Welcher Schalter?</td>
+                    <td>Ordner</td>
+                    <td>Track</td>
+                    <td>Wiederholende Wiedergabe</td>
+                    <td>Betrieb als Schalter <sup>1</sup></td>
+                    <td>Timer Löschen</td>
+                </tr>
+                <tr>
+                    <td><input type="number" size="12" name="im" min="0" max="15" value="0"></td>
+                    <td><input type="number" size="15" name="bumu" min="0" max="7" step="1" value="0"></td> <!--input for button-->
+                    <td><input type="number" size="12" name="fo" min="0" max="100" step="1" value="0"></td> <!--input for folder-->
+                    <td><input type="number" size="12" name="tr" min="0" max="999" step="1" value="0"></td> <!--input for track-->
+                    <td><input type="number" size="25" name="re" min="0" max="1" step="1" value="0"></td> <!--input for repeat-->
+                    <td><input type="number" name="tomu" min="0" max="1" step="1" value="0"></td> <!--input for toggleable-->
+                    <td><input type="number" name="del" min="0" max="1" step="1" value="0"></td> <!--input for delete-->
+                </tr>
 			</table>
 			<br>
 			<div>
 				<input type="submit" value="Bestätigen">
 			</div>
 		</form>
+		<a href="/start.cgi?start=1"><button>Speichern und Starten</button></a>
 	</div>
 	<div id="boxFooter">
 		<p><sup>1</sup> 0...Schalter muss gedrückt gehalten werden, damit Wiedergabe erfolgt; 1...Wiedergabe wird mit Drücken des Tasters gestartet, Ende durch erneutes Drücken oder abgelaufene Zeit</p>

@@ -1,4 +1,4 @@
-// Padded and checksummed version of: C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v2/zeitmaschine_v2/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
+// Padded and checksummed version of: C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v2/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
 
 .cpu cortex-m0plus
 .thumb

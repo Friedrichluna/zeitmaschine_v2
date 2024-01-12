@@ -175,6 +175,7 @@ public:
             dummy = false;
             RelayTimer relayTimer(gpio_pin_switch, frequency, length_sec, relay_arr, relay_amount, toggleable);
             printf("recovered: relayTimer[%d]\n",index);
+            return relayTimer;
         }
         return relayTimer;
     }
@@ -204,10 +205,12 @@ public:
         
         bool dummy;
         if (this_relays_pointer[5 + shift] != 0) {
+            printf("MusicTimer %d is dummy\n", index);
             dummy = true;
             MusicTimer musicTimer;  //erstellt dummy objekt
             return musicTimer;
         }
+        printf("pointer: %d of index: %d\n",this_relays_pointer[5 + shift], index);
         MusicTimer musicTimer(button, folder, track, repeat, toggleable);
         printf("recovered: MusicTimer[%d]\n",index);
         return musicTimer;
