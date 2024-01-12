@@ -6,6 +6,7 @@
 #include <hardware/sync.h>
 #include "hardware/flash.h"
 #include "flash_utils.h"
+#include "musicTimer.h"
 
 
 class DataSaver {
@@ -123,13 +124,17 @@ public:
                 saver_array[5 + shift] = 0;
             }
         }
+        //printf("Datasaver went through all Timers");
+
         u_int8_t saver_array_int8[flash_array_length*(length_rt+length_mt)];
-        for (int i = 0; i < flash_array_length*(length_rt+length_mt); i++) {
-            saver_array_int8[2 * i + 1] = (u_int8_t) (saver_array[i] >> 8);
+        //printf("length loop %d: ", flash_array_length*(length_rt+length_mt));
+
+        for (int i = 0; i < flash_array_length*(length_rt+length_mt)/2; i++) {
             saver_array_int8[2 * i] = (u_int8_t) (saver_array[i]);
+            saver_array_int8[2 * i + 1] = (u_int8_t) (saver_array[i] >> 8);
+            
+           // printf("ds saver_array %d\n", i);
         }
-
-
 
         erase_target_flash();
         printf("\nProgramming target region...\n");
@@ -137,13 +142,8 @@ public:
         flash_range_program(flash_target_offset, saver_array_int8 , flash_array_length*(length_rt+length_mt));
         restore_interrupts(ints_);
         printf("done\n");
-        print_buf_int(flash_array_length*(length_rt+length_mt));
+        print_buf_int(flash_array_length*(length_rt+length_mt)/2);
         
-
-
-        uint8_t random_data[FLASH_PAGE_SIZE]; //wenn man diese Zeilen löscht, chrashed das Programm
-        for (int i = 0; i < FLASH_PAGE_SIZE; ++i)
-            random_data[i] = 0;
     }
 
 
@@ -208,6 +208,7 @@ public:
             printf("MusicTimer %d is dummy\n", index);
             dummy = true;
             MusicTimer musicTimer;  //erstellt dummy objekt
+            musicTimer.dummy = 1; //Manchmal gab es hier einen Fehler, wo kein Dummy erstellt wurde, dies wird hiermit sichergestellt
             return musicTimer;
         }
         printf("pointer: %d of index: %d\n",this_relays_pointer[5 + shift], index);

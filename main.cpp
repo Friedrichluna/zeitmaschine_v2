@@ -27,9 +27,8 @@ int main() {
     TimerArrays& ta = TimerArrays::getInstance();
     DataSaver ds;
     WebInterface wi = WebInterface(); //erstellt webinterface Objekt
-    wi.init_webInterface(); //initialisiert Webinterface
-    
-    ds.print_buf_int(64*32);
+
+    ds.print_buf_int(32*32);
     for (int i = 0; i < RELAY_TIMER_AMOUNT; i++){
         relayTimer_arr[i] = ds.recover_relayTimer(i); //zieht Objekt wieder aus flash memory
         
@@ -37,20 +36,26 @@ int main() {
     ta.setRelayTimer(relayTimer_arr);
     for (int i = 0; i < MUSIC_TIMER_AMOUNT; i++){
         musicTimer_arr[i] = ds.recover_musicTimer(i, RELAY_TIMER_AMOUNT); //zieht Objekt wieder aus flash memory
+        printf("Recoverd Timer: %s\n", musicTimer_arr[i].toString());
     }
     ta.setMusicTimer(musicTimer_arr);
     
-
-    while (!ta.get_timers_got_updated()) {
-        sleep_ms(100);
+    //initialisiert Webinterface
+    bool connected = wi.init_webInterface();
+    if(connected){
+        while (!ta.get_timers_got_updated()) {
+            sleep_ms(100);
+        }
     }
     printf("Save and start\n");
 
     for (int i = 0; i < RELAY_TIMER_AMOUNT; i++){
         relayTimer_arr[i] = ta.getRelayTimer(i); //zieht Objekt wieder aus flash memory
+        printf("Relay Timer: %s\n", relayTimer_arr[i].toString());
     }
     for (int i = 0; i < MUSIC_TIMER_AMOUNT; i++){
         musicTimer_arr[i] = ta.getMusicTimer(i); //zieht Objekt wieder aus flash memory
+        printf("Music Timer: %s\n", musicTimer_arr[i].toString());
     }
 
     if(ta.get_timers_got_updated()){
@@ -58,7 +63,7 @@ int main() {
         ds.flash_objects(relayTimer_arr, RELAY_TIMER_AMOUNT, musicTimer_arr, MUSIC_TIMER_AMOUNT);
     }
 
-
+    printf("Starting Routine!");
     while(true) {
         sleep_ms(10);
         for (int b = 0; b < RELAY_TIMER_AMOUNT; b++) {
@@ -67,7 +72,6 @@ int main() {
         for (int b = 0; b < MUSIC_TIMER_AMOUNT; b++) {
             musicTimer_arr[b].routine();
         }
-        printf("\n");
     };
 }
 
@@ -78,7 +82,7 @@ int map_button(int index) {
 }
 
 int map_relay(int index) {
-    int relay_arr[16] = {7,10,11,12,13,14,15,16,17,28,19,20,21,22,26,27};
+    int relay_arr[16] = {7,10,11,12,13,14,15,16,17,18,19,20,21,22,26,27};
     return relay_arr[index-1];
 }
 

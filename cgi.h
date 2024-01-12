@@ -16,7 +16,7 @@ int map_relay(int index);
 const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
 {
     printf("index: %s\n", pcValue[0]);
-    int index = atoi(pcValue[0]);
+    int index = atoi(pcValue[0]) - 1;
 
     printf("button: %s\n", pcValue[1]);
     int button = map_button(atoi(pcValue[1]));
@@ -78,10 +78,10 @@ const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char
 const char * cgi_music_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
 {
     printf("index: %s\n", pcValue[0]);
-    int indexMusic = atoi(pcValue[0]);
+    int indexMusic = atoi(pcValue[0]) - 1;
     
     printf("button for music: %s\n", pcValue[1]);
-    int buttonMusic = atoi(pcValue[1]);
+    int buttonMusic = map_button(atoi(pcValue[1]));
 
     printf("folder: %s\n", pcValue[2]);
     int folder = atoi(pcValue[2]);

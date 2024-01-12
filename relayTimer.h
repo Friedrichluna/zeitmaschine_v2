@@ -6,9 +6,9 @@
 #include <cstring>
 #include "pico/stdlib.h"
 
-//#define MAX_RELAY_TIMERS 16
+
 #define MAX_RELAY_AMOUNT 16
-#define ITERATIONS_PER_SECOND (100*10); 
+#define ITERATIONS_PER_SECOND 100; 
 
 
 
@@ -46,6 +46,7 @@ public:
 
         initGPIO();
     }
+
     int gpio_pin_switch;
     int frequency;
     int length_sec;
@@ -53,9 +54,6 @@ public:
     int relay_amount;
     bool toggleable;
     bool dummy;
-
-
-
 
     void initGPIO(){
         if (dummy) { //checkt ob das Objekt benutzt werden soll
@@ -66,6 +64,7 @@ public:
             gpio_init(relay_arr[i]);
             gpio_set_dir(relay_arr[i], GPIO_OUT);
         }
+        relaisReset(relay_arr, relay_amount);
         //Initialize switch
         gpio_init(gpio_pin_switch);
         gpio_set_dir(gpio_pin_switch, GPIO_IN);
@@ -121,9 +120,12 @@ public:
                 //überprüft, ob Relais getoggelt werden soll 
                 //(Wenn counter Vielfaches von ITERATIONS_PER_SECOND durch 2*frequency erreicht
                 // ==> da zweimal pro Periode Relais getoggelt wird (An und Aus))
-                int a = (counter - 1) % (iterations_per_second/(2*frequency));
-                int b = (iterations_per_second/(2*frequency));
-                if((counter - 1) % (iterations_per_second/(2*frequency)) == 0){
+                // int a = (counter - 1) % (iterations_per_second/(2*frequency));
+                // int b = (iterations_per_second/(2*frequency));
+                if(frequency == 0){
+                    relaisOn(relay_arr, relay_amount);
+                }
+                else if((counter - 1) % ((iterations_per_second*10)/(2*frequency)) == 0){
                     relaisToggle(relay_arr, relay_amount);
                 }
             }
@@ -159,6 +161,12 @@ private:
     
     // Funktion schaltet alle Relais aus
     void relaisReset(int relais_pin[], int amount){
+        for (int i = 0; i < amount; i++){
+            gpio_put(relais_pin[i], 1);
+        }
+    }
+
+    void relaisOn(int relais_pin[], int amount){
         for (int i = 0; i < amount; i++){
             gpio_put(relais_pin[i], 0);
         }

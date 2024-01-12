@@ -78,7 +78,7 @@ public:
             counter =counter+1;
             //printf("%d ", counter);
             musicAn();//Funktion zum Anschalten der Musik
-            //printf("musicOn = %d, ", musicOn);
+            //printf("musicOn = %d, \n", musicOn);
         }
         if(!activateMusic){//Stoppen der MusiK
             musicAus();
@@ -89,7 +89,7 @@ public:
     //Funktion zum Anschalten der Musik: falls Musik noch nicht läuft, wird Musik angeschaltet
     void musicAn(){
         if(!musicOn){
-            //printf("musik an ");
+            //printf("musik an \n");
             playMusic();//Funktion zum Abspielen der Musik 
         }
     }
