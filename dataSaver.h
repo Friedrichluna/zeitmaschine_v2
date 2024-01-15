@@ -11,24 +11,26 @@
 
 class DataSaver {
 private:
-    int flash_array_length = 64;
+    int flash_array_length = 64; //länge pro Objekt in Flash in Byte
 public:
     DataSaver(){
-        data_saver_init();
+        data_saver_init(); //
     };
 
-    const uint8_t* flash_target_contents  = (uint8_t*) getAddressPersistent();
-    uint32_t flash_target_offset_incl_RAM = (uint32_t) flash_target_contents; 
-    uint32_t flash_target_offset = flash_target_offset_incl_RAM - XIP_BASE;
+    const uint8_t* flash_target_contents  = (uint8_t*) getAddressPersistent(); //pointer zum festem Speicher, mit RAM - in 8bit 
+    uint32_t flash_target_offset_incl_RAM = (uint32_t) flash_target_contents; //in 32bit
+    uint32_t flash_target_offset = flash_target_offset_incl_RAM - XIP_BASE; //in 32bit ohne RAM (zum speuchern benötigt)
 
-    void data_saver_init() {
+    void data_saver_init() { //zeigt die Peicherposition an
         char addr[80];
         printf("adressPersistent: %p\n", getAddressPersistent());
 
         sprintf(addr, "address = %x", getAddressPersistent()); 
     }
     
-    void print_buf(const uint8_t *buf, size_t len) {
+    //printed den Speicher in hexadec.-bytes in die Konsole
+    //pointe zu speicher und länge des Speichers als Eingangsvariable 
+    void print_buf(const uint8_t *buf, size_t len) { 
         for (size_t i = 0; i < len; ++i) {
             printf("%02x", buf[i]);
             if (i % 16 == 15)
@@ -40,7 +42,9 @@ public:
         }
     }
 
-    void print_buf_int(int len) {
+    //printed den Speicher in 16bit-int in die Konsole
+    //Länge des zu printenden Speichers als Eingangsvariable
+    void print_buf_int(int len) { 
         u_int16_t* buf = (u_int16_t*) getAddressPersistent();
         int counter = 0;
         for (size_t i = 0; i < len; ++i) {
@@ -60,16 +64,19 @@ public:
         }
     }
 
-    void erase_target_flash() {
+    //leert 4KiByte auf dem Flash (immer vorm neuen abspeichern)
+    void erase_target_flash() { 
         printf("\nErasing target region: %d ...\n", flash_target_offset);
-        uint32_t ints = save_and_disable_interrupts(); 
-        flash_range_erase(flash_target_offset, FLASH_SECTOR_SIZE);
-        restore_interrupts (ints);
+        uint32_t ints = save_and_disable_interrupts(); //interrupts deaktivieren und speichern 
+        //(muss vor dem Zugriff auf Flash geschehen)
+        flash_range_erase(flash_target_offset, FLASH_SECTOR_SIZE); //löscht 4KiBit
+        restore_interrupts (ints); //Interrupts werden wieder aktiviert
         printf("Done.\n");
         //print_buf_int(FLASH_SECTOR_SIZE);
     }
 
 
+    //timerArrays Spiechern
     void flash_objects(RelayTimer* relayTimer_array, int length_rt, MusicTimer* musicTimer_array, int length_mt) {
         int saver_array[(flash_array_length/2)*(length_rt+length_mt)];
         printf("\nstarting flash\n");
