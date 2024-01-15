@@ -1,4 +1,4 @@
-//Quellen: https://www.makermatrix.com/blog/read-and-write-data-with-the-pi-pico-onboard-flash/
+//Quelle: https://www.makermatrix.com/blog/read-and-write-data-with-the-pi-pico-onboard-flash/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -76,13 +76,14 @@ public:
     }
 
 
-    //timerArrays Spiechern
+    //timerArrays Speichert die Initialisierungsargumente Timer-Arrays im Flash
+    //nimmt die RelayTimer und MusicTimer inl. längen als Eingagsvariable
     void flash_objects(RelayTimer* relayTimer_array, int length_rt, MusicTimer* musicTimer_array, int length_mt) {
-        int saver_array[(flash_array_length/2)*(length_rt+length_mt)];
+        int saver_array[(flash_array_length/2)*(length_rt+length_mt)]; //Array mit länge um alle Argumente aller Objekte darin zu speichern 
         printf("\nstarting flash\n");
         
-        for (int i = 0; i < length_rt; i++) {
-            int shift = i*32;
+        for (int i = 0; i < length_rt; i++) { //speicher die Argumente von jedem relayTimer in saver_array
+            int shift = i*32; 
             
             saver_array[0 + shift] = relayTimer_array[i].gpio_pin_switch;
             saver_array[1 + shift] = relayTimer_array[i].frequency;
@@ -104,8 +105,8 @@ public:
                 saver_array[20 + shift] = 0;
             }
         }
-        for (int i = 0; i < length_mt; i++) {
-            int shift = i*32 + (flash_array_length/2)*length_rt;
+        for (int i = 0; i < length_mt; i++) { //speicher die Argumente von jedem musicTimer in saver_array
+            int shift = i*32 + (flash_array_length/2)*length_rt;   
             
             saver_array[0 + shift] = musicTimer_array[i].button;
             saver_array[1 + shift] = musicTimer_array[i].folder;
@@ -131,29 +132,28 @@ public:
                 saver_array[5 + shift] = 0;
             }
         }
-        //printf("Datasaver went through all Timers");
 
-        u_int8_t saver_array_int8[flash_array_length*(length_rt+length_mt)];
-        //printf("length loop %d: ", flash_array_length*(length_rt+length_mt));
+        u_int8_t saver_array_int8[flash_array_length*(length_rt+length_mt)]; //saver array in 8but Fromat (nur dieses kann gespeichert werden)
 
-        for (int i = 0; i < flash_array_length*(length_rt+length_mt)/2; i++) {
+        for (int i = 0; i < flash_array_length*(length_rt+length_mt)/2; i++) { //integeers werden geteilt un Byteweise im array gespeichert
             saver_array_int8[2 * i] = (u_int8_t) (saver_array[i]);
             saver_array_int8[2 * i + 1] = (u_int8_t) (saver_array[i] >> 8);
-            
-           // printf("ds saver_array %d\n", i);
         }
 
-        erase_target_flash();
+        erase_target_flash(); //Flash wird geräumt
         printf("\nProgramming target region...\n");
-        uint32_t ints_ = save_and_disable_interrupts(); 
+        uint32_t ints_ = save_and_disable_interrupts(); //interrupts deaktivieren und speichern 
+        //saver_array_int8 wird in permanentem Speicher abgespeichert 
         flash_range_program(flash_target_offset, saver_array_int8 , flash_array_length*(length_rt+length_mt));
-        restore_interrupts(ints_);
+        restore_interrupts(ints_); //Interrupts werden wieder aktiviert
         printf("done\n");
-        print_buf_int(flash_array_length*(length_rt+length_mt)/2);
+        //print_buf_int(flash_array_length*(length_rt+length_mt)/2); 
         
     }
 
 
+    //ließt die abgespecherten Argumente für ein Relay-Timer-Objekt aus dem Flash und gibt dieses zurück.
+    //gibt unterschiedliche Objekt je nach index aus
     RelayTimer recover_relayTimer(int index) {
         int shift = index*(flash_array_length/2);
         u_int16_t* this_relays_pointer = (u_int16_t*) getAddressPersistent();
@@ -180,22 +180,25 @@ public:
         }
         else {
             dummy = false;
-            RelayTimer relayTimer(gpio_pin_switch, frequency, length_sec, relay_arr, relay_amount, toggleable);
+            RelayTimer relayTimer(gpio_pin_switch, frequency, length_sec, relay_arr, relay_amount, toggleable); //fügt die recoverten Argumente in Objekt ein
             printf("recovered: relayTimer[%d]\n",index);
-            return relayTimer;
+            return relayTimer; //gibt Objekt wieder zurück
         }
-        return relayTimer;
+        return relayTimer; //git dummy-Objekt zurück
     }
 
+    //ließt die abgespecherten Argumente für ein MisicTimer-Objekt aus dem Flash und gibt dieses zurück.
+    //gibt unterschiedliche Objekt je nach index aus
+    //benötigt zusätzlich die Menge der RelayTimern, um die Verschiebung im Flash zu bestimmen
     MusicTimer recover_musicTimer(int index, int length_rt) {
-        int shift = index*32 + (flash_array_length/2)*length_rt;
-        u_int16_t* this_relays_pointer = (u_int16_t*) getAddressPersistent();
+        int shift = index*32 + (flash_array_length/2)*length_rt; 
+        u_int16_t* this_timers_pointer = (u_int16_t*) getAddressPersistent(); //pointer zu Timer in 16bit-Format 
 
-        int button = (int) this_relays_pointer[0 + shift];
-        int folder = (int) this_relays_pointer[1 + shift];
-        int track = (int) this_relays_pointer[2 + shift];
+        int button = (int) this_timers_pointer[0 + shift];
+        int folder = (int) this_timers_pointer[1 + shift];
+        int track = (int) this_timers_pointer[2 + shift];
         bool repeat;
-        if (this_relays_pointer[3 + shift] == 1) {
+        if (this_timers_pointer[3 + shift] == 1) {
             repeat = true;
         }
         else {
@@ -203,7 +206,7 @@ public:
         }
 
         bool toggleable;
-        if (this_relays_pointer[4 + shift] == 1) {
+        if (this_timers_pointer[4 + shift] == 1) {
             toggleable = true;
         }
         else {
@@ -211,17 +214,17 @@ public:
         }
         
         bool dummy;
-        if (this_relays_pointer[5 + shift] != 0) {
+        if (this_timers_pointer[5 + shift] != 0) {
             printf("MusicTimer %d is dummy\n", index);
             dummy = true;
             MusicTimer musicTimer;  //erstellt dummy objekt
             musicTimer.dummy = 1; //Manchmal gab es hier einen Fehler, wo kein Dummy erstellt wurde, dies wird hiermit sichergestellt
-            return musicTimer;
+            return musicTimer; //gint dummy-Objekt zurück
         }
-        printf("pointer: %d of index: %d\n",this_relays_pointer[5 + shift], index);
-        MusicTimer musicTimer(button, folder, track, repeat, toggleable);
+        printf("pointer: %d of index: %d\n",this_timers_pointer[5 + shift], index);
+        MusicTimer musicTimer(button, folder, track, repeat, toggleable); //fügt die recoverten Argumente in Objekt ein
         printf("recovered: MusicTimer[%d]\n",index);
-        return musicTimer;
+        return musicTimer; //gibt das Objekt wieder zürück
     }
 };
 
