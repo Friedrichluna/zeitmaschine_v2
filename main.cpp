@@ -11,8 +11,6 @@
 #define MUSIC_TIMER_AMOUNT 16
 
 
-int map_button(int index);
-int map_relay(int index);
 void printRelayTimer(RelayTimer relyTimer, int index);
 
 
@@ -76,21 +74,5 @@ int main() {
 }
 
 
-int map_button(int index) {
-    int button_arr[7] = {0,1,2,3,4,5,6};
-    return button_arr[index-1];
-}
 
-int map_relay(int index) {
-    int relay_arr[16] = {7,10,11,12,13,14,15,16,17,18,19,20,21,22,26,27};
-    return relay_arr[index-1];
-}
 
-void printRelayTimer(RelayTimer relyTimer, int index){
-    if(relyTimer.dummy){
-        printf("relytimer %d is a dummy\n", index);
-    }
-    else {
-        printf("relytimer %d is not a dummy\n", index);
-    }
-}

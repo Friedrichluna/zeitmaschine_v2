@@ -7,6 +7,7 @@
 #define MUSIC_TIMER_AMOUNT 16
 
 
+
 class TimerArrays{
     private:
         TimerArrays(){}
@@ -64,5 +65,34 @@ class TimerArrays{
         }
 };
 
+int map_button(int index, bool invert) {
+    int button_arr[7] = {0,1,2,3,4,5,6};
+    if(invert){
+        for(int i = 0; i < sizeof(button_arr); i++){
+            if(button_arr[i] == index){
+                return i+1; //returned Schalternummer
+            }
+        }
+        return -1; //Fehler, falls index nicht im button_arr enthalten
+    }
+    else{
+        return button_arr[index-1]; //returned Pin
+    }
+}
+
+int map_relay(int index, bool invert) {
+    int relay_arr[16] = {7,10,11,12,13,14,15,16,17,18,19,20,21,22,26,27};
+    if(invert){
+        for(int i = 0; i < sizeof(relay_arr); i++){
+            if(relay_arr[i] == index){
+                return i+1; //returned Relaynummer
+            }
+        }
+        return -1; //Fehler, falls index nicht im relay_arr enthalten
+    }
+    else{
+        return relay_arr[index-1]; //returned Pin
+    }
+}
 
 #endif /* TIMERARRAYS_H */

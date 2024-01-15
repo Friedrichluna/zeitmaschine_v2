@@ -2,6 +2,10 @@
 #define MUSICTIMER_H
 #include "pico/stdlib.h"
 #include "dfPlayerDriver.h"
+#include "timerArrays.h"
+
+int map_button(int index, bool invert);
+int map_relay(int index, bool invert);
 
 class MusicTimer
 {
@@ -162,7 +166,7 @@ public:
     char* toString(){
         char* result = (char*)malloc(120); 
         if(!dummy){
-            sniprintf(result, 120, "Schalter: %d  Ordner: %d   Track: %d  Wiederholen: %d   Schalterbetrieb: %d", button, folder, track, repeat, toggleable);
+            sniprintf(result, 120, "Schalter: %d  Ordner: %d   Track: %d  Wiederholen: %d   Schalterbetrieb: %d", map_button(button, 1), folder, track, repeat, toggleable);
         }
         else{
             sniprintf(result, 120, "Timer nicht belegt!");

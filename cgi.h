@@ -9,8 +9,6 @@
 #define MUSIC_TIMER_AMOUNT 16
 #define RELAY_ARR_OFFSET 5
 
-int map_button(int index);
-int map_relay(int index);
 
 // CGI handler which is run when a request for /value.cgi is detected
 const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
@@ -19,7 +17,7 @@ const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char
     int index = atoi(pcValue[0]) - 1;
 
     printf("button: %s\n", pcValue[1]);
-    int button = map_button(atoi(pcValue[1]));
+    int button = map_button(atoi(pcValue[1]),0);
 
     printf("frequency: %s\n", pcValue[2]);
     int frequency = atoi(pcValue[2]);
@@ -35,7 +33,9 @@ const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char
         toggleable = false;
     
     int numberRelaysSelected = 0;
-    for(int i = 0; i < 16; i++){
+    for(int i = 0; i < RELAY_TIMER_AMOUNT+2; i++){
+        printf("before crash got to %d\n",RELAY_ARR_OFFSET + i);
+        printf("before crash got to %s\n",pcValue[RELAY_ARR_OFFSET + i] );
         if (strcmp(pcValue[RELAY_ARR_OFFSET + i], "end_of_array") == 0) {
             numberRelaysSelected = i;
             printf("numberRelaysSelected: %d\n", i);
@@ -47,7 +47,7 @@ const char * cgi_value_handler(int iIndex, int iNumParams, char *pcParam[], char
 
     for(int j = 0; j < numberRelaysSelected; j++){
 
-        selectedRelays[j] = map_relay(atoi(pcParam[RELAY_ARR_OFFSET + j]));
+        selectedRelays[j] = map_relay(atoi(pcParam[RELAY_ARR_OFFSET + j]), 0);
     }
     printf("numberrelysselected: %d\n",numberRelaysSelected);
     printf("selected Relays: ");
@@ -81,7 +81,7 @@ const char * cgi_music_handler(int iIndex, int iNumParams, char *pcParam[], char
     int indexMusic = atoi(pcValue[0]) - 1;
     
     printf("button for music: %s\n", pcValue[1]);
-    int buttonMusic = map_button(atoi(pcValue[1]));
+    int buttonMusic = map_button(atoi(pcValue[1]),0);
 
     printf("folder: %s\n", pcValue[2]);
     int folder = atoi(pcValue[2]);

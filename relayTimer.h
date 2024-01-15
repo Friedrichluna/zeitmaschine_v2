@@ -6,11 +6,11 @@
 #include <cstring>
 #include "pico/stdlib.h"
 
-
 #define MAX_RELAY_AMOUNT 16
 #define ITERATIONS_PER_SECOND 100; 
 
-
+int map_button(int index, bool invert);
+int map_relay(int index, bool invert);
 
 class RelayTimer {
 private:
@@ -75,12 +75,12 @@ public:
     char* toString(){
         char* result = (char*)malloc(130); 
         if(!dummy){
-            sniprintf(result, 130, "Schalter: %d  Frequenz: %d (pro 10 Sekunden)   Länge: %d Sekunden Schalterbetrieb: %d   Anzahl Relais: %d  Relais: ", gpio_pin_switch, frequency, length_sec,toggleable, relay_amount);
+            sniprintf(result, 130, "Schalter: %d  Frequenz: %d (pro 10 Sekunden)   Länge: %d Sekunden Schalterbetrieb: %d   Anzahl Relais: %d  Relais: ", map_button(gpio_pin_switch,1), frequency, length_sec,toggleable, relay_amount);
             //printf("toString Funktion Relay Amount: %d", relay_amount);
             for(int i = 0; i < relay_amount; i++){
                 //printf("toString Funktion Relay: %d\n", relay_arr[i]);
                 char relay[4];
-                sniprintf(relay, 4, " %d", relay_arr[i]);
+                sniprintf(relay, 4, " %d", map_relay(relay_arr[i],1));
                 strcat(result, relay);
             }
 

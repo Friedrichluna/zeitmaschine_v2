@@ -1,3 +1,5 @@
+//alles übernommen außer die letzte Zeile
+
 // Common settings used in most of the pico_w examples
 // (see https://www.nongnu.org/lwip/2_1_x/group__lwip__opts.html for details)]
 
@@ -90,3 +92,5 @@
 #define LWIP_HTTPD_CGI 1
 #define LWIP_HTTPD_SSI_INCLUDE_TAG 0
 #define HTTPD_FSDATA_FILE "htmldata.c"
+
+#define LWIP_HTTPD_MAX_CGI_PARAMETERS 32 //damit das pcValue Array lang genug ist
