@@ -2879,9 +2879,9 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
  .data          0x00000000        0x0 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
  .bss           0x00000000        0x0 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
- .text          0x00000000        0x0 C:\Users\frl00\AppData\Local\Temp\ccEt1Mvh.o
- .data          0x00000000        0x0 C:\Users\frl00\AppData\Local\Temp\ccEt1Mvh.o
- .bss           0x00000000        0x0 C:\Users\frl00\AppData\Local\Temp\ccEt1Mvh.o
+ .text          0x00000000        0x0 C:\Users\frl00\AppData\Local\Temp\ccokF74Y.o
+ .data          0x00000000        0x0 C:\Users\frl00\AppData\Local\Temp\ccokF74Y.o
+ .bss           0x00000000        0x0 C:\Users\frl00\AppData\Local\Temp\ccokF74Y.o
  .text          0x00000000        0x0 d:/programs/pico installer/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a(guard.o)
  .data          0x00000000        0x0 d:/programs/pico installer/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a(guard.o)
  .bss           0x00000000        0x0 d:/programs/pico installer/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a(guard.o)
@@ -3505,7 +3505,7 @@ LOAD d:/programs/pico installer/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/1
 .boot2          0x10000000      0x100
                 0x10000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 C:\Users\frl00\AppData\Local\Temp\ccEt1Mvh.o
+ .boot2         0x10000000      0x100 C:\Users\frl00\AppData\Local\Temp\ccokF74Y.o
                 0x10000100                __boot2_end__ = .
                 0x00000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -8230,7 +8230,7 @@ LOAD CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/tin
 LOAD CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 LOAD CMakeFiles/pico_w_webserver.dir/e2226c621bd5376d7ebbd5ae0e79b953/rp2040_usb_device_enumeration.c.obj
 LOAD CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
-LOAD C:\Users\frl00\AppData\Local\Temp\ccEt1Mvh.o
+LOAD C:\Users\frl00\AppData\Local\Temp\ccokF74Y.o
 LOAD d:/programs/pico installer/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a
 LOAD d:/programs/pico installer/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a
 START GROUP
@@ -8429,7 +8429,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000eb8       0x2c CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
  .ARM.attributes
-                0x00000ee4       0x22 C:\Users\frl00\AppData\Local\Temp\ccEt1Mvh.o
+                0x00000ee4       0x22 C:\Users\frl00\AppData\Local\Temp\ccokF74Y.o
  .ARM.attributes
                 0x00000f06       0x2c d:/programs/pico installer/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a(guard.o)
  .ARM.attributes
@@ -9173,93 +9173,93 @@ LOAD linker stubs
  .debug_ranges  0x00008910      0x370 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
  .debug_ranges  0x00008c80       0x28 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
 
-.debug_line     0x00000000    0x3cdbb
- .debug_line    0x00000000     0x28a8 CMakeFiles/pico_w_webserver.dir/main.cpp.obj
- .debug_line    0x000028a8      0x5fb CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c.obj
- .debug_line    0x00002ea3      0x763 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj
- .debug_line    0x00003606      0x2a9 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
- .debug_line    0x000038af      0xbb9 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
- .debug_line    0x00004468      0x3d4 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
- .debug_line    0x0000483c      0x817 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .debug_line    0x00005053      0x4a2 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
- .debug_line    0x000054f5      0x49f CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
- .debug_line    0x00005994      0x24d CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_line    0x00005be1      0xa21 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_line    0x00006602      0xd1f CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_line    0x00007321     0x10a1 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- .debug_line    0x000083c2      0xabb CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/common/pico_sync/sem.c.obj
- .debug_line    0x00008e7d      0x24a CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/common/pico_sync/lock_core.c.obj
- .debug_line    0x000090c7     0x10f4 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/common/pico_sync/mutex.c.obj
- .debug_line    0x0000a1bb      0x2d5 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/common/pico_sync/critical_section.c.obj
- .debug_line    0x0000a490     0x1c05 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/common/pico_time/time.c.obj
- .debug_line    0x0000c095      0xc65 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .debug_line    0x0000ccfa      0x8ce CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/common/pico_util/pheap.c.obj
- .debug_line    0x0000d5c8      0x593 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
- .debug_line    0x0000db5b      0x42a CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_line    0x0000df85      0x2ce CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_line    0x0000e253      0x1cb CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/init.c.obj
- .debug_line    0x0000e41e      0x51e CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/def.c.obj
- .debug_line    0x0000e93c     0x12a3 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/dns.c.obj
- .debug_line    0x0000fbdf      0x76a CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/inet_chksum.c.obj
- .debug_line    0x00010349      0x1ed CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/ip.c.obj
- .debug_line    0x00010536      0xa7c CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/mem.c.obj
- .debug_line    0x00010fb2      0x5e4 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/memp.c.obj
- .debug_line    0x00011596      0xe19 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/netif.c.obj
- .debug_line    0x000123af     0x181b CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/pbuf.c.obj
- .debug_line    0x00013bca      0x8c4 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/raw.c.obj
- .debug_line    0x0001448e      0x284 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/stats.c.obj
- .debug_line    0x00014712     0x2824 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/tcp.c.obj
- .debug_line    0x00016f36     0x249c CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/tcp_in.c.obj
- .debug_line    0x000193d2     0x20f1 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/tcp_out.c.obj
- .debug_line    0x0001b4c3      0x771 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/timeouts.c.obj
- .debug_line    0x0001bc34     0x129a CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/udp.c.obj
- .debug_line    0x0001cece     0x2356 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/ipv4/dhcp.c.obj
- .debug_line    0x0001f224     0x1182 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/ipv4/etharp.c.obj
- .debug_line    0x000203a6      0x678 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/ipv4/icmp.c.obj
- .debug_line    0x00020a1e      0xe4e CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/ipv4/ip4_frag.c.obj
- .debug_line    0x0002186c      0xbae CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/ipv4/ip4.c.obj
- .debug_line    0x0002241a      0x700 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/ipv4/ip4_addr.c.obj
- .debug_line    0x00022b1a      0x4de CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/netif/ethernet.c.obj
- .debug_line    0x00022ff8      0xbcb CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj
- .debug_line    0x00023bc3      0x58a CMakeFiles/pico_w_webserver.dir/e55f86128c146cea5be32be30210ada4/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj
- .debug_line    0x0002414d     0x2505 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj
- .debug_line    0x00026652     0x26ce CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj
- .debug_line    0x00028d20      0x515 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj
- .debug_line    0x00029235     0x11c3 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj
- .debug_line    0x0002a3f8     0x10dd CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
- .debug_line    0x0002b4d5      0x6a8 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
- .debug_line    0x0002bb7d      0xe09 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj
- .debug_line    0x0002c986      0xbdb CMakeFiles/pico_w_webserver.dir/e55f86128c146cea5be32be30210ada4/pico_async_context/async_context_threadsafe_background.c.obj
- .debug_line    0x0002d561      0x354 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/apps/http/fs.c.obj
- .debug_line    0x0002d8b5     0x1c49 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/apps/http/httpd.c.obj
- .debug_line    0x0002f4fe      0x917 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
- .debug_line    0x0002fe15      0xb37 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_line    0x0003094c     0x1251 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .debug_line    0x00031b9d      0x150 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
- .debug_line    0x00031ced      0x2d9 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
- .debug_line    0x00031fc6      0x429 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
- .debug_line    0x000323ef      0x38c CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
- .debug_line    0x0003277b       0x9a CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
- .debug_line    0x00032815       0xa0 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
- .debug_line    0x000328b5      0x3d8 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
- .debug_line    0x00032c8d      0x354 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
- .debug_line    0x00032fe1      0x255 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
- .debug_line    0x00033236       0xca CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
- .debug_line    0x00033300       0xd8 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
- .debug_line    0x000333d8      0x2bd CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
- .debug_line    0x00033695      0x1e0 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .debug_line    0x00033875      0xeed CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_line    0x00034762      0x487 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
- .debug_line    0x00034be9      0xdfd CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .debug_line    0x000359e6      0x307 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- .debug_line    0x00035ced      0xed2 CMakeFiles/pico_w_webserver.dir/90dd90916796ccc2655e49c1b87d0d3d/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
- .debug_line    0x00036bbf      0xa66 CMakeFiles/pico_w_webserver.dir/90dd90916796ccc2655e49c1b87d0d3d/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- .debug_line    0x00037625     0x2041 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
- .debug_line    0x00039666      0x4a1 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
- .debug_line    0x00039b07      0xe3c CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
- .debug_line    0x0003a943      0xbf1 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/tinyusb/src/tusb.c.obj
- .debug_line    0x0003b534     0x155d CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
- .debug_line    0x0003ca91      0x32a CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
+.debug_line     0x00000000    0x3cdbc
+ .debug_line    0x00000000     0x28a9 CMakeFiles/pico_w_webserver.dir/main.cpp.obj
+ .debug_line    0x000028a9      0x5fb CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c.obj
+ .debug_line    0x00002ea4      0x763 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj
+ .debug_line    0x00003607      0x2a9 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+ .debug_line    0x000038b0      0xbb9 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
+ .debug_line    0x00004469      0x3d4 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_line    0x0000483d      0x817 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ .debug_line    0x00005054      0x4a2 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_line    0x000054f6      0x49f CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_line    0x00005995      0x24d CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_line    0x00005be2      0xa21 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_line    0x00006603      0xd1f CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_line    0x00007322     0x10a1 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_line    0x000083c3      0xabb CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/common/pico_sync/sem.c.obj
+ .debug_line    0x00008e7e      0x24a CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/common/pico_sync/lock_core.c.obj
+ .debug_line    0x000090c8     0x10f4 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .debug_line    0x0000a1bc      0x2d5 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/common/pico_sync/critical_section.c.obj
+ .debug_line    0x0000a491     0x1c05 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/common/pico_time/time.c.obj
+ .debug_line    0x0000c096      0xc65 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_line    0x0000ccfb      0x8ce CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/common/pico_util/pheap.c.obj
+ .debug_line    0x0000d5c9      0x593 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_line    0x0000db5c      0x42a CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_line    0x0000df86      0x2ce CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_line    0x0000e254      0x1cb CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/init.c.obj
+ .debug_line    0x0000e41f      0x51e CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/def.c.obj
+ .debug_line    0x0000e93d     0x12a3 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/dns.c.obj
+ .debug_line    0x0000fbe0      0x76a CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/inet_chksum.c.obj
+ .debug_line    0x0001034a      0x1ed CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/ip.c.obj
+ .debug_line    0x00010537      0xa7c CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/mem.c.obj
+ .debug_line    0x00010fb3      0x5e4 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/memp.c.obj
+ .debug_line    0x00011597      0xe19 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/netif.c.obj
+ .debug_line    0x000123b0     0x181b CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/pbuf.c.obj
+ .debug_line    0x00013bcb      0x8c4 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/raw.c.obj
+ .debug_line    0x0001448f      0x284 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/stats.c.obj
+ .debug_line    0x00014713     0x2824 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/tcp.c.obj
+ .debug_line    0x00016f37     0x249c CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/tcp_in.c.obj
+ .debug_line    0x000193d3     0x20f1 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/tcp_out.c.obj
+ .debug_line    0x0001b4c4      0x771 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/timeouts.c.obj
+ .debug_line    0x0001bc35     0x129a CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/udp.c.obj
+ .debug_line    0x0001cecf     0x2356 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/ipv4/dhcp.c.obj
+ .debug_line    0x0001f225     0x1182 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/ipv4/etharp.c.obj
+ .debug_line    0x000203a7      0x678 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/ipv4/icmp.c.obj
+ .debug_line    0x00020a1f      0xe4e CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/ipv4/ip4_frag.c.obj
+ .debug_line    0x0002186d      0xbae CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/ipv4/ip4.c.obj
+ .debug_line    0x0002241b      0x700 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/core/ipv4/ip4_addr.c.obj
+ .debug_line    0x00022b1b      0x4de CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/netif/ethernet.c.obj
+ .debug_line    0x00022ff9      0xbcb CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj
+ .debug_line    0x00023bc4      0x58a CMakeFiles/pico_w_webserver.dir/e55f86128c146cea5be32be30210ada4/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj
+ .debug_line    0x0002414e     0x2505 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj
+ .debug_line    0x00026653     0x26ce CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj
+ .debug_line    0x00028d21      0x515 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj
+ .debug_line    0x00029236     0x11c3 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj
+ .debug_line    0x0002a3f9     0x10dd CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+ .debug_line    0x0002b4d6      0x6a8 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
+ .debug_line    0x0002bb7e      0xe09 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj
+ .debug_line    0x0002c987      0xbdb CMakeFiles/pico_w_webserver.dir/e55f86128c146cea5be32be30210ada4/pico_async_context/async_context_threadsafe_background.c.obj
+ .debug_line    0x0002d562      0x354 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/apps/http/fs.c.obj
+ .debug_line    0x0002d8b6     0x1c49 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/lwip/src/apps/http/httpd.c.obj
+ .debug_line    0x0002f4ff      0x917 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+ .debug_line    0x0002fe16      0xb37 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_line    0x0003094d     0x1251 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .debug_line    0x00031b9e      0x150 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_line    0x00031cee      0x2d9 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+ .debug_line    0x00031fc7      0x429 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+ .debug_line    0x000323f0      0x38c CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_line    0x0003277c       0x9a CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+ .debug_line    0x00032816       0xa0 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+ .debug_line    0x000328b6      0x3d8 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+ .debug_line    0x00032c8e      0x354 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_line    0x00032fe2      0x255 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+ .debug_line    0x00033237       0xca CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .debug_line    0x00033301       0xd8 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+ .debug_line    0x000333d9      0x2bd CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
+ .debug_line    0x00033696      0x1e0 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .debug_line    0x00033876      0xeed CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_line    0x00034763      0x487 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+ .debug_line    0x00034bea      0xdfd CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ .debug_line    0x000359e7      0x307 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ .debug_line    0x00035cee      0xed2 CMakeFiles/pico_w_webserver.dir/90dd90916796ccc2655e49c1b87d0d3d/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+ .debug_line    0x00036bc0      0xa66 CMakeFiles/pico_w_webserver.dir/90dd90916796ccc2655e49c1b87d0d3d/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ .debug_line    0x00037626     0x2041 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+ .debug_line    0x00039667      0x4a1 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+ .debug_line    0x00039b08      0xe3c CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+ .debug_line    0x0003a944      0xbf1 CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/tinyusb/src/tusb.c.obj
+ .debug_line    0x0003b535     0x155d CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+ .debug_line    0x0003ca92      0x32a CMakeFiles/pico_w_webserver.dir/D_/programs/Pico_Installer/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
 
 .debug_str      0x00000000    0x1089b
  .debug_str     0x00000000     0x24ab CMakeFiles/pico_w_webserver.dir/main.cpp.obj

@@ -45,9 +45,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  20 .debug_ranges 00008ca8  00000000  00000000  00123560  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line   0003cdbb  00000000  00000000  0012c208  2**0
+ 21 .debug_line   0003cdbc  00000000  00000000  0012c208  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_str    0001089b  00000000  00000000  00168fc3  2**0
+ 22 .debug_str    0001089b  00000000  00000000  00168fc4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  23 .debug_frame  000090e4  00000000  00000000  00179860  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -1535,7 +1535,7 @@ Disassembly of section .text:
 10000d64:	4023      	ands	r3, r4
 10000d66:	2b07      	cmp	r3, #7
 10000d68:	d0e3      	beq.n	10000d32 <_ZN9DataSaver13print_buf_intEi+0xa>
-10000d6a:	2c11      	cmp	r4, #17
+10000d6a:	2c12      	cmp	r4, #18
 10000d6c:	d0e5      	beq.n	10000d3a <_ZN9DataSaver13print_buf_intEi+0x12>
 10000d6e:	2c02      	cmp	r4, #2
 10000d70:	d0e7      	beq.n	10000d42 <_ZN9DataSaver13print_buf_intEi+0x1a>
@@ -1598,7 +1598,7 @@ Disassembly of section .text:
 10000dea:	4293      	cmp	r3, r2
 10000dec:	dcf4      	bgt.n	10000dd8 <_ZN9DataSaver13flash_objectsEP10RelayTimeriP10MusicTimeri+0x44>
 10000dee:	0002      	movs	r2, r0
-10000df0:	3212      	adds	r2, #18
+10000df0:	3213      	adds	r2, #19
 10000df2:	0092      	lsls	r2, r2, #2
 10000df4:	5113      	str	r3, [r2, r4]
 10000df6:	235c      	movs	r3, #92	; 0x5c
@@ -1606,7 +1606,7 @@ Disassembly of section .text:
 10000dfa:	2b00      	cmp	r3, #0
 10000dfc:	d024      	beq.n	10000e48 <_ZN9DataSaver13flash_objectsEP10RelayTimeriP10MusicTimeri+0xb4>
 10000dfe:	0003      	movs	r3, r0
-10000e00:	3313      	adds	r3, #19
+10000e00:	3314      	adds	r3, #20
 10000e02:	009b      	lsls	r3, r3, #2
 10000e04:	2201      	movs	r2, #1
 10000e06:	511a      	str	r2, [r3, r4]
@@ -1614,7 +1614,7 @@ Disassembly of section .text:
 10000e0a:	5ccb      	ldrb	r3, [r1, r3]
 10000e0c:	2b00      	cmp	r3, #0
 10000e0e:	d021      	beq.n	10000e54 <_ZN9DataSaver13flash_objectsEP10RelayTimeriP10MusicTimeri+0xc0>
-10000e10:	3014      	adds	r0, #20
+10000e10:	3015      	adds	r0, #21
 10000e12:	0080      	lsls	r0, r0, #2
 10000e14:	2301      	movs	r3, #1
 10000e16:	5103      	str	r3, [r0, r4]
@@ -1643,12 +1643,12 @@ Disassembly of section .text:
 10000e44:	2200      	movs	r2, #0
 10000e46:	e7cf      	b.n	10000de8 <_ZN9DataSaver13flash_objectsEP10RelayTimeriP10MusicTimeri+0x54>
 10000e48:	0003      	movs	r3, r0
-10000e4a:	3313      	adds	r3, #19
+10000e4a:	3314      	adds	r3, #20
 10000e4c:	009b      	lsls	r3, r3, #2
 10000e4e:	2200      	movs	r2, #0
 10000e50:	511a      	str	r2, [r3, r4]
 10000e52:	e7d9      	b.n	10000e08 <_ZN9DataSaver13flash_objectsEP10RelayTimeriP10MusicTimeri+0x74>
-10000e54:	3014      	adds	r0, #20
+10000e54:	3015      	adds	r0, #21
 10000e56:	0080      	lsls	r0, r0, #2
 10000e58:	2300      	movs	r3, #0
 10000e5a:	5103      	str	r3, [r0, r4]
@@ -1813,7 +1813,7 @@ Disassembly of section .text:
 10000fb2:	5a9a      	ldrh	r2, [r3, r2]
 10000fb4:	4692      	mov	sl, r2
 10000fb6:	0021      	movs	r1, r4
-10000fb8:	3112      	adds	r1, #18
+10000fb8:	3113      	adds	r1, #19
 10000fba:	0049      	lsls	r1, r1, #1
 10000fbc:	5a58      	ldrh	r0, [r3, r1]
 10000fbe:	2100      	movs	r1, #0
@@ -1830,7 +1830,7 @@ Disassembly of section .text:
 10000fd4:	4281      	cmp	r1, r0
 10000fd6:	dbf4      	blt.n	10000fc2 <_ZN9DataSaver18recover_relayTimerEi+0x3e>
 10000fd8:	0023      	movs	r3, r4
-10000fda:	3313      	adds	r3, #19
+10000fda:	3314      	adds	r3, #20
 10000fdc:	005b      	lsls	r3, r3, #1
 10000fde:	4950      	ldr	r1, [pc, #320]	; (10001120 <_ZN9DataSaver18recover_relayTimerEi+0x19c>)
 10000fe0:	5acb      	ldrh	r3, [r1, r3]
@@ -1856,7 +1856,7 @@ Disassembly of section .text:
 10001008:	4642      	mov	r2, r8
 1000100a:	4649      	mov	r1, r9
 1000100c:	5499      	strb	r1, [r3, r2]
-1000100e:	3414      	adds	r4, #20
+1000100e:	3415      	adds	r4, #21
 10001010:	0064      	lsls	r4, r4, #1
 10001012:	4b43      	ldr	r3, [pc, #268]	; (10001120 <_ZN9DataSaver18recover_relayTimerEi+0x19c>)
 10001014:	5b1b      	ldrh	r3, [r3, r4]

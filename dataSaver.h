@@ -51,7 +51,7 @@ public:
             printf("%05d", buf[i]);
             if (i % 8 == 7)
                 printf("\n");
-            else if (i == 17)
+            else if (i == 18)
                 printf("|");
             else if (i == 2)
                 printf("|");
@@ -91,18 +91,18 @@ public:
             for (int j = 0; j < relayTimer_array[i].relay_amount; j++) {
                 saver_array[j + 3 + shift] = relayTimer_array[i].relay_arr[j];
             }
-            saver_array[18 + shift] = relayTimer_array[i].relay_amount;
+            saver_array[19 + shift] = relayTimer_array[i].relay_amount;
             if (relayTimer_array[i].toggleable) {
-                saver_array[19 + shift] = 1;
-            }
-            else {
-                saver_array[19 + shift] = 0;
-            }
-            if (relayTimer_array[i].dummy) {
                 saver_array[20 + shift] = 1;
             }
             else {
                 saver_array[20 + shift] = 0;
+            }
+            if (relayTimer_array[i].dummy) {
+                saver_array[21 + shift] = 1;
+            }
+            else {
+                saver_array[21 + shift] = 0;
             }
         }
         for (int i = 0; i < length_mt; i++) { //speicher die Argumente von jedem musicTimer in saver_array
@@ -161,13 +161,13 @@ public:
         int gpio_pin_switch = (int) this_relays_pointer[0 + shift];
         int frequency = (int) this_relays_pointer[1 + shift];
         int length_sec = (int) this_relays_pointer[2 + shift];
-        int relay_amount = (int) this_relays_pointer[18 + shift];
+        int relay_amount = (int) this_relays_pointer[19 + shift];
         int relay_arr[16];
         for (int j = 0; j < relay_amount; j++) {
             relay_arr[j] = (int) this_relays_pointer[j + 3 + shift];
         }
         bool toggleable;
-        if (this_relays_pointer[19 + shift] == 1) {
+        if (this_relays_pointer[20 + shift] == 1) {
             toggleable = true;
         }
         else {
@@ -175,7 +175,7 @@ public:
         }
         RelayTimer relayTimer; //erstellt dummy objekt
         bool dummy;
-        if (this_relays_pointer[20 + shift] == 1) {
+        if (this_relays_pointer[21 + shift] == 1) {
             dummy = true;
         }
         else {
@@ -184,6 +184,7 @@ public:
             printf("recovered: relayTimer[%d]\n",index);
             return relayTimer; //gibt Objekt wieder zurück
         }
+        relayTimer.dummy = 1;
         return relayTimer; //git dummy-Objekt zurück
     }
 
