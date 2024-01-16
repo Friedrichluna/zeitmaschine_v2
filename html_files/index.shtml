@@ -52,22 +52,22 @@
 	<p>Bitte tragen Sie die gewünschten Werte in die Felder ein und bestätigen Sie mit dem jeweiligen Button.</p>
 	<div id="boxRelays">
 		<table rules="rows">
-			<tr><td>Relais Timer 1: <!--#rt1--></td></tr>
-			<tr><td>Relais Timer 2: <!--#rt2--></td></tr>
-	   		<tr><td>Relais Timer 3: <!--#rt3--></td></tr>
-    		<tr><td>Relais Timer 4: <!--#rt4--></td></tr>
-    		<tr><td>Relais Timer 5: <!--#rt5--></td></tr>
-	    	<tr><td>Relais Timer 6: <!--#rt6--></td></tr>
-    		<tr><td>Relais Timer 7: <!--#rt7--></td></tr>
-    		<tr><td>Relais Timer 8: <!--#rt8--></td></tr>
-	    	<tr><td>Relais Timer 9: <!--#rt9--></td></tr>
-	    	<tr><td>Relais Timer 10: <!--#rt10--></td></tr>
-    		<tr><td>Relais Timer 11: <!--#rt11--></td></tr>
-    		<tr><td>Relais Timer 12: <!--#rt12--></td></tr>
-	    	<tr><td>Relais Timer 13: <!--#rt13--></td></tr>
-    		<tr><td>Relais Timer 14: <!--#rt14--></td></tr>
-    		<tr><td>Relais Timer 15: <!--#rt15--></td></tr>
-	    	<tr><td>Relais Timer 16: <!--#rt16--></td></tr>
+			<tr><td>Nr. 1: <!--#rt1--></td></tr>
+			<tr><td>Nr. 2: <!--#rt2--></td></tr>
+	   		<tr><td>Nr. 3: <!--#rt3--></td></tr>
+    		<tr><td>Nr. 4: <!--#rt4--></td></tr>
+    		<tr><td>Nr. 5: <!--#rt5--></td></tr>
+	    	<tr><td>Nr. 6: <!--#rt6--></td></tr>
+    		<tr><td>Nr. 7: <!--#rt7--></td></tr>
+    		<tr><td>Nr. 8: <!--#rt8--></td></tr>
+	    	<tr><td>Nr. 9: <!--#rt9--></td></tr>
+	    	<tr><td>Nr. 10: <!--#rt10--></td></tr>
+    		<tr><td>Nr. 11: <!--#rt11--></td></tr>
+    		<tr><td>Nr. 12: <!--#rt12--></td></tr>
+	    	<tr><td>Nr. 13: <!--#rt13--></td></tr>
+    		<tr><td>Nr. 14: <!--#rt14--></td></tr>
+    		<tr><td>Nr. 15: <!--#rt15--></td></tr>
+	    	<tr><td>Nr. 16: <!--#rt16--></td></tr>
 		</table>
     </div>
 	<div id="boxRelayTimer">
@@ -75,19 +75,22 @@
 			<b>Werte für Beleuchtung:</b>
 			<table id="bigTable" rules="rows" cellpadding="8">
 				<tr>
-					<td>Index im Array</td>
+					<td>Nummer</td>
 					<td>Welcher Schalter?</td>
 					<td>Blinkanzahl pro 10s</td>
 					<td>Dauer (in s)</td>
 					<td>Betrieb als Schalter <sup>1</sup></td>
-					<td>Anzusteuernde Relays</td>  
+					<td>Anzusteuernde Relays <sup>2</sup></td>  
 				</tr>
 				<tr>
 					<td><input type="number" size="12" name="i" min="1" max="16" value="1"></td> <!--input for index-->
 					<td><input type="number" size="15" name="b" min="1" max="7" value="1"></td> <!--input for button-->
 					<td><input type="number" name="f" min="0" max="30"></td> <!--input for frequency-->
 					<td><input type="number" size="12" name="l" min="0" value="0"></td> <!--input for length-->
-					<td><input type="number" name="t" min="0" max="1" value="0"></td> <!--input for toggleable-->
+					<td><select id="t" name="t">
+						<option value="0">gedrückt halten</option>
+						<option value="1">an/aus</option>
+					</select><!--input for toggleable-->
 					<td>
 						<label><input type="checkbox" name="1" value="1">1</label>
 						<label><input type="checkbox" name="2" value="1">2</label>
@@ -96,8 +99,8 @@
 						<label><input type="checkbox" name="5" value="1">5</label>
 						<label><input type="checkbox" name="6" value="1">6</label>
 						<label><input type="checkbox" name="7" value="1">7</label>
-						<label><input type="checkbox" name="8" value="1">8</label>
-						<label><input type="checkbox" name="9" value="1">9</label>
+						<label><input type="checkbox" name="8" value="1">8</label> 
+						<label><input type="checkbox" name="9" value="1">9</label> <br>
 						<label><input type="checkbox" name="10" value="1">10</label>
 						<label><input type="checkbox" name="11" value="1">11</label>
 						<label><input type="checkbox" name="12" value="1">12</label>
@@ -117,22 +120,22 @@
 	</div>
 	<div id="boxMusic">
 		<table rules="rows">
-			<tr><td>Musik Timer 1: <!--#mt1--></td></tr>
-			<tr><td>Musik Timer 2: <!--#mt2--></td></tr>
-	   		<tr><td>Musik Timer 3: <!--#mt3--></td></tr>
-    		<tr><td>Musik Timer 4: <!--#mt4--></td></tr>
-    		<tr><td>Musik Timer 5: <!--#mt5--></td></tr>
-	    	<tr><td>Musik Timer 6: <!--#mt6--></td></tr>
-    		<tr><td>Musik Timer 7: <!--#mt7--></td></tr>
-    		<tr><td>Musik Timer 8: <!--#mt8--></td></tr>
-	    	<tr><td>Musik Timer 9: <!--#mt9--></td></tr>
-	    	<tr><td>Musik Timer 10: <!--#mt10--></td></tr>
-    		<tr><td>Musik Timer 11: <!--#mt11--></td></tr>
-    		<tr><td>Musik Timer 12: <!--#mt12--></td></tr>
-	    	<tr><td>Musik Timer 13: <!--#mt13--></td></tr>
-    		<tr><td>Musik Timer 14: <!--#mt14--></td></tr>
-    		<tr><td>Musik Timer 15: <!--#mt15--></td></tr>
-	    	<tr><td>Musik Timer 16: <!--#mt16--></td></tr>
+			<tr><td>Nr. 1: <!--#mt1--></td></tr>
+			<tr><td>Nr. 2: <!--#mt2--></td></tr>
+	   		<tr><td>Nr. 3: <!--#mt3--></td></tr>
+    		<tr><td>Nr. 4: <!--#mt4--></td></tr>
+    		<tr><td>Nr. 5: <!--#mt5--></td></tr>
+	    	<tr><td>Nr. 6: <!--#mt6--></td></tr>
+    		<tr><td>Nr. 7: <!--#mt7--></td></tr>
+    		<tr><td>Nr. 8: <!--#mt8--></td></tr>
+	    	<tr><td>Nr. 9: <!--#mt9--></td></tr>
+	    	<tr><td>Nr. 10: <!--#mt10--></td></tr>
+    		<tr><td>Nr. 11: <!--#mt11--></td></tr>
+    		<tr><td>Nr. 12: <!--#mt12--></td></tr>
+	    	<tr><td>Nr. 13: <!--#mt13--></td></tr>
+    		<tr><td>Nr. 14: <!--#mt14--></td></tr>
+    		<tr><td>Nr. 15: <!--#mt15--></td></tr>
+	    	<tr><td>Nr. 16: <!--#mt16--></td></tr>
 		</table>
 	</div>
 	<div id="boxMusicTimer">
@@ -140,22 +143,31 @@
 			<b>Werte für Ton-/Musikausgabe:</b>
 			<table id="bigMusicTable" rules="rows" cellpadding="8">
 				<tr>
-                    <td>Index im Array</td>
+                    <td>Nummer des Timers</td>
                     <td>Welcher Schalter?</td>
                     <td>Ordner</td>
                     <td>Track</td>
-                    <td>Wiederholende Wiedergabe</td>
+                    <td>Wiedergabemodus</td>
                     <td>Betrieb als Schalter <sup>1</sup></td>
-                    <td>Timer Löschen</td>
+                    <td>Timer Löschen</td> 
                 </tr>
                 <tr>
-                    <td><input type="number" size="12" name="im" min="1" max="17" value="0"></td> <!--input for index-->
-                    <td><input type="number" size="15" name="bumu" min="1" max="7" step="1" value="0"></td> <!--input for button-->
+                    <td><input type="number" size="12" name="im" min="1" max="17" value="1"></td> <!--input for index-->
+                    <td><input type="number" size="15" name="bumu" min="1" max="7" step="1" value="1"></td> <!--input for button-->
                     <td><input type="number" size="12" name="fo" min="0" max="100" step="1" value="0"></td> <!--input for folder-->
                     <td><input type="number" size="12" name="tr" min="0" max="999" step="1" value="0"></td> <!--input for track-->
-                    <td><input type="number" size="25" name="re" min="0" max="1" step="1" value="0"></td> <!--input for repeat-->
-                    <td><input type="number" name="tomu" min="0" max="1" step="1" value="0"></td> <!--input for toggleable-->
-                    <td><input type="number" name="del" min="0" max="1" step="1" value="0"></td> <!--input for delete-->
+					<td><select id="t" name="t">
+						<option value="0">einmal</option>
+						<option value="1">dauerschleife</option>
+					</select><!--input for repeat-->
+					<td><select id="t" name="t">
+						<option value="0">gedrückt halten</option>
+						<option value="1">an/aus</option>
+					</select><!--input for toggleable-->
+                    <td><select id="t" name="t">
+						<option value="0">nein</option>
+						<option value="1">ja</option>
+					</select><!--input for delete-->
                 </tr>
 			</table>
 			<br>
@@ -166,7 +178,9 @@
 		<a href="/start.cgi?start=1"><button>Speichern und Starten</button></a>
 	</div>
 	<div id="boxFooter">
-		<p><sup>1</sup> 0...Schalter muss gedrückt gehalten werden, damit Wiedergabe erfolgt; 1...Wiedergabe wird mit Drücken des Tasters gestartet, Ende durch erneutes Drücken oder abgelaufene Zeit</p>
+		<p><sup>1</sup> "gedrückt halten"...Schalter muss gedrückt gehalten werden, damit Wiedergabe erfolgt;<br> 
+			"an/aus"...Wiedergabe wird mit Drücken des Tasters gestartet, Ende durch erneutes Drücken oder abgelaufene Zeit</p>
+		<p><sup>2</sup> Löschen: Durch das Auswählen keines Relays, wird der Timer gelöscht.</p>
 	</div>
 </body>
 </html>
