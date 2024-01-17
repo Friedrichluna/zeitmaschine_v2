@@ -21,6 +21,7 @@ private:
     int counter = 0; 
 
 public:
+    // Konstruktor für Dummy-Objekte
     RelayTimer() {
         gpio_pin_switch = 0;
         frequency = 0;
@@ -38,6 +39,7 @@ public:
         length_sec = length_sec_;
         relay_arr[MAX_RELAY_AMOUNT] = {};
         relay_amount = relay_amount_;
+        //Übergabe Array mit Relais-Pins
         for (int i = 0; i < relay_amount; i++) {
             relay_arr[i] = relay_arr_[i];
         }
@@ -69,16 +71,17 @@ public:
         gpio_init(gpio_pin_switch);
         gpio_set_dir(gpio_pin_switch, GPIO_IN);
         gpio_pull_up(gpio_pin_switch);
-        switchOnLastIteration = !gpio_get(gpio_pin_switch);
+        switchOnLastIteration = !gpio_get(gpio_pin_switch); //für toggle-Modus
     }
 
+    // Funktion zur Ausgabe der Attribute auf der Website
     char* toString(){
+        //Reserviert Speicher
         char* result = (char*)malloc(130); 
         if(!dummy){
             sniprintf(result, 130, "Schalter: %d  Frequenz: %d (pro 10 Sekunden)   Länge: %d Sekunden Schalterbetrieb: %d   Anzahl Relais: %d  Relais: ", map_button(gpio_pin_switch,1), frequency, length_sec,toggleable, relay_amount);
-            //printf("toString Funktion Relay Amount: %d", relay_amount);
             for(int i = 0; i < relay_amount; i++){
-                //printf("toString Funktion Relay: %d\n", relay_arr[i]);
+                //fügt Relais aus Relay Array der Ausgabe hinzu, nutzt map_relay um Pins zu Relais 1-16 zu übersetzen
                 char relay[4];
                 sniprintf(relay, 4, " %d", map_relay(relay_arr[i],1));
                 strcat(result, relay);
@@ -86,6 +89,7 @@ public:
 
         }
         else{
+            //Falls Objekt Dummy ist, wird "Timer nicht belegt!" ausgegeben
             sniprintf(result, 130, "Timer nicht belegt!");
         }
         return result;
@@ -102,7 +106,6 @@ public:
 		    if(switchOn && !switchOnLastIteration){
 			    //toggles activateTimer
 			    activateTimer = !activateTimer;
-                //printf("switch %d toggled\n", gpio_pin_switch);
 		    }   
 		//setzt switchOnLastIteration auf aktuellen Wert des Switches für die nächste Iteration
 		switchOnLastIteration = switchOn;
@@ -114,17 +117,15 @@ public:
 
         if(activateTimer){
             counter = counter + 1;
-            //printf("switch %d on\n", gpio_pin_switch);
             //Überprüft, ob Zeit abgelaufen ist oder Zeit auf 0 (Dauerbetrieb, solange Schalter an)
             if(counter < length_sec*iterations_per_second || length_sec == 0){
-                //überprüft, ob Relais getoggelt werden soll 
-                //(Wenn counter Vielfaches von ITERATIONS_PER_SECOND durch 2*frequency erreicht
-                // ==> da zweimal pro Periode Relais getoggelt wird (An und Aus))
-                // int a = (counter - 1) % (iterations_per_second/(2*frequency));
-                // int b = (iterations_per_second/(2*frequency));
+                //Falls Frequez = 0 ist, sollen die Relais dauerhaft an sein
                 if(frequency == 0){
                     relaisOn(relay_arr, relay_amount);
                 }
+                //überprüft, ob Relais getoggelt werden soll 
+                //(Wenn counter Vielfaches von ITERATIONS_PER_SECOND*10 (da Frequenz in pro 10 Sekunden angegeben) durch 2*frequency erreicht
+                // ==> da zweimal pro Periode Relais getoggelt wird (An und Aus))
                 else if((counter - 1) % ((iterations_per_second*10)/(2*frequency)) == 0){
                     relaisToggle(relay_arr, relay_amount);
                 }
@@ -136,7 +137,6 @@ public:
         }
         else{
             //Wenn activateTimer false ist, wird counter auf 0 gesetzt und die Relais ausgeschalten
-            //printf("switch %d off\n", gpio_pin_switch);
             if(counter != 0){
                 counter = 0;
                 relaisReset(relay_arr, relay_amount);
@@ -166,6 +166,7 @@ private:
         }
     }
 
+    // Funktion schaltet alle Relais an
     void relaisOn(int relais_pin[], int amount){
         for (int i = 0; i < amount; i++){
             gpio_put(relais_pin[i], 0);
