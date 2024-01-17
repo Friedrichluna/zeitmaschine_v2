@@ -8,13 +8,15 @@
 		h1 {margin: 0;
 			padding: 0;
 		}
+/*Boxen für Positionierung der Texte auf der Webseite*/
 		#boxRelays {position: absolute;
 			left: 1%;
 			width: 96%;
 			top: 14%;
 			height: 15%;
 			overflow-y: scroll;
-			border:solid black 1px;
+			border-radius: 8px;
+			background-color: hsl(201, 100%, 94%);
 			padding: 10px;
 		}
 		#boxRelayTimer {position: absolute;
@@ -22,6 +24,9 @@
 			width: 96%;
 			top: 32%;
 			height: 20%;
+			/* border:solid #000000 2px; */
+			border-radius: 8px;
+			background-color: hsl(201, 100%, 94%);
 			padding: 10px;
 		}
 		#boxMusic {position: absolute;
@@ -30,7 +35,8 @@
 			top: 58%;
 			height: 15%;
 			overflow-y: scroll;
-			border:solid black 1px;
+			background-color: #f2e9ff;
+			border-radius: 8px;
 			padding: 10px;
 		}
 		#boxMusicTimer {position: absolute;
@@ -38,19 +44,69 @@
 			width: 96%;
 			top: 76%;
 			height: 20%;
+			/* border:solid #000000 2px; */
+			border-radius: 8px;
+			background-color: #f2e9ff;
 			padding: 10px;
+		}
+		#boxSaver {position: absolute;
+			left: 1%;
+			width: 96%;
+			top: 100%;
 		}
 		#boxFooter {position: absolute;
 			left: 1%;
 			width: 96%;
-			top: 100%;
+			top: 110%;
+		}
+		.button_relay{
+			background-color: 	#84d4ff;
+			border: none;
+			color: rgb(0, 0, 0);
+			padding: 5px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 4px;
+			width: 15%;
+		}
+		.button_music{
+			background-color: #c39dff;
+			border: none;
+			color: rgb(0, 0, 0);
+			padding: 5px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 4px;
+			width: 15%;
+		}
+		.buttonSaveAndClose {
+			background-color: #6acf42;
+			border: none;
+			color: rgb(0, 0, 0);
+			padding: 10px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 4px;
+			width: 100%;
 		}
 	</style>
 </head>
 <body>
 	<h1>Webserver Zeitmaschine</h1>
 	<p>Bitte tragen Sie die gewünschten Werte in die Felder ein und bestätigen Sie mit dem jeweiligen Button.</p>
-	<div id="boxRelays">
+	<div id="boxRelays"> <!--In dieser Box werden alle Relay-Timer-Objekte mit ihren Attributen angezeigt-->
 		<table rules="rows">
 			<tr><td>Nr. 1: <!--#rt1--></td></tr>
 			<tr><td>Nr. 2: <!--#rt2--></td></tr>
@@ -70,6 +126,8 @@
 	    	<tr><td>Nr. 16: <!--#rt16--></td></tr>
 		</table>
     </div>
+<!--In folgendem Bereich können neue Relay-Timer-Objekte mit ihren Attributen erzeugt und abgespeichert
+		sowie bestehende Relay-Timer überschrieben werden.-->
 	<div id="boxRelayTimer">
 		<form action="values.cgi" method="get">
 			<b>Werte für Beleuchtung:</b>
@@ -83,14 +141,14 @@
 					<td>Anzusteuernde Relays <sup>2</sup></td>  
 				</tr>
 				<tr>
-					<td><input type="number" size="12" name="i" min="1" max="16" value="1"></td> <!--input for index-->
-					<td><input type="number" size="15" name="b" min="1" max="7" value="1"></td> <!--input for button-->
-					<td><input type="number" name="f" min="0" max="30"></td> <!--input for frequency-->
-					<td><input type="number" size="12" name="l" min="0" value="0"></td> <!--input for length-->
+					<td><input type="number" size="12" name="i" min="1" max="16" value="1"></td> <!--Input für den Index-->
+					<td><input type="number" size="15" name="b" min="1" max="7" value="1"></td> <!--Input für Schalter-->
+					<td><input type="number" name="f" min="0" max="30"></td> <!--Input für Frequenz-->
+					<td><input type="number" size="12" name="l" min="0" value="0"></td> <!--Input für Dauer-->
 					<td><select id="t" name="t">
 						<option value="0">gedrückt halten</option>
 						<option value="1">an/aus</option>
-					</select><!--input for toggleable-->
+					</select> <!--Input für Betriebsart-->
 					<td>
 						<label><input type="checkbox" name="1" value="1">1</label>
 						<label><input type="checkbox" name="2" value="1">2</label>
@@ -108,17 +166,17 @@
 						<label><input type="checkbox" name="14" value="1">14</label>
 						<label><input type="checkbox" name="15" value="1">15</label>
 						<label><input type="checkbox" name="16" value="1">16</label>
-					</td>
+					</td> <!--Input für anzusteuernde Relays-->
 				</tr>
 			</table>
 			<input type="hidden" name="end_marker" value="end_of_array">
 			<br>
 			<div>
-				<input type="submit" value="Bestätigen">
+				<input type="submit" class="button_relay" value="Bestätigen"> <!--Übergabe der eingegebenen Werte-->
 			</div>
 		</form>
 	</div>
-	<div id="boxMusic">
+	<div id="boxMusic"> <!--In dieser Box werden alle Musik-Timer-Objekte mit ihren Attributen angezeigt-->
 		<table rules="rows">
 			<tr><td>Nr. 1: <!--#mt1--></td></tr>
 			<tr><td>Nr. 2: <!--#mt2--></td></tr>
@@ -138,6 +196,8 @@
 	    	<tr><td>Nr. 16: <!--#mt16--></td></tr>
 		</table>
 	</div>
+<!--In folgendem Bereich können neue Musik-Timer-Objekte mit ihren Attributen erzeugt und abgespeichert
+		sowie bestehende Musik-Timer überschrieben und gelöscht werden.-->
 	<div id="boxMusicTimer">
 		<form action="music.cgi" method="get">
 			<b>Werte für Ton-/Musikausgabe:</b>
@@ -152,32 +212,34 @@
                     <td>Timer Löschen</td> 
                 </tr>
                 <tr>
-                    <td><input type="number" size="12" name="im" min="1" max="17" value="1"></td> <!--input for index-->
-                    <td><input type="number" size="15" name="bumu" min="1" max="7" step="1" value="1"></td> <!--input for button-->
-                    <td><input type="number" size="12" name="fo" min="0" max="100" step="1" value="0"></td> <!--input for folder-->
-                    <td><input type="number" size="12" name="tr" min="0" max="999" step="1" value="0"></td> <!--input for track-->
+                    <td><input type="number" size="12" name="im" min="1" max="16" value="1"></td> <!--Input für den Index-->
+                    <td><input type="number" size="15" name="bumu" min="1" max="7" step="1" value="1"></td> <!--Input für Schalter-->
+                    <td><input type="number" size="12" name="fo" min="0" max="100" step="1" value="0"></td> <!--Input für Ordner-->
+                    <td><input type="number" size="12" name="tr" min="0" max="999" step="1" value="0"></td> <!--Input für Track-->
 					<td><select id="t" name="t">
 						<option value="0">einmal</option>
 						<option value="1">dauerschleife</option>
-					</select><!--input for repeat-->
+					</select><!--Input for Wiedergabemodus-->
 					<td><select id="t" name="t">
 						<option value="0">gedrückt halten</option>
 						<option value="1">an/aus</option>
-					</select><!--input for toggleable-->
+					</select><!--Input für Betriebsart-->
                     <td><select id="t" name="t">
 						<option value="0">nein</option>
 						<option value="1">ja</option>
-					</select><!--input for delete-->
+					</select><!--Input zum Löschen-->
                 </tr>
 			</table>
 			<br>
 			<div>
-				<input type="submit" value="Bestätigen">
+				<input type="submit" class="button_music" value="Bestätigen"> <!--Übergabe der eingegebenen Werte-->
 			</div>
 		</form>
-		<a href="/start.cgi?start=1"><button>Speichern und Starten</button></a>
 	</div>
-	<div id="boxFooter">
+	<div id="boxSaver">
+		<a href="/start.cgi?start=1"><button class="buttonSaveAndClose">Speichern und Starten</button></a> <!--Beenden der Eingabe und Start des Programmes-->
+	</div>
+	<div id="boxFooter"> <!--Box für Fußzeile, Erklärung unklarer Formulierungen-->
 		<p><sup>1</sup> "gedrückt halten"...Schalter muss gedrückt gehalten werden, damit Wiedergabe erfolgt;<br> 
 			"an/aus"...Wiedergabe wird mit Drücken des Tasters gestartet, Ende durch erneutes Drücken oder abgelaufene Zeit</p>
 		<p><sup>2</sup> Löschen: Durch das Auswählen keines Relays, wird der Timer gelöscht.</p>
