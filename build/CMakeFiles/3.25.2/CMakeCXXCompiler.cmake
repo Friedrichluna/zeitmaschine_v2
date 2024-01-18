@@ -1,4 +1,4 @@
-set(CMAKE_CXX_COMPILER "E:/programs/PICO/gcc-arm-none-eabi/bin/arm-none-eabi-g++.exe")
+set(CMAKE_CXX_COMPILER "D:/programs/Pico Installer/gcc-arm-none-eabi/bin/arm-none-eabi-g++.exe")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_COMPILER_VERSION "10.3.1")
@@ -22,11 +22,11 @@ set(CMAKE_CXX_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "E:/programs/PICO/gcc-arm-none-eabi/bin/arm-none-eabi-ar.exe")
-set(CMAKE_CXX_COMPILER_AR "E:/programs/PICO/gcc-arm-none-eabi/bin/arm-none-eabi-gcc-ar.exe")
-set(CMAKE_RANLIB "E:/programs/PICO/gcc-arm-none-eabi/bin/arm-none-eabi-ranlib.exe")
-set(CMAKE_CXX_COMPILER_RANLIB "E:/programs/PICO/gcc-arm-none-eabi/bin/arm-none-eabi-gcc-ranlib.exe")
-set(CMAKE_LINKER "E:/programs/PICO/gcc-arm-none-eabi/bin/arm-none-eabi-ld.exe")
+set(CMAKE_AR "D:/programs/Pico Installer/gcc-arm-none-eabi/bin/arm-none-eabi-ar.exe")
+set(CMAKE_CXX_COMPILER_AR "D:/programs/Pico Installer/gcc-arm-none-eabi/bin/arm-none-eabi-gcc-ar.exe")
+set(CMAKE_RANLIB "D:/programs/Pico Installer/gcc-arm-none-eabi/bin/arm-none-eabi-ranlib.exe")
+set(CMAKE_CXX_COMPILER_RANLIB "D:/programs/Pico Installer/gcc-arm-none-eabi/bin/arm-none-eabi-gcc-ranlib.exe")
+set(CMAKE_LINKER "D:/programs/Pico Installer/gcc-arm-none-eabi/bin/arm-none-eabi-ld.exe")
 set(CMAKE_MT "")
 set(CMAKE_COMPILER_IS_GNUCXX 1)
 set(CMAKE_CXX_COMPILER_LOADED 1)
@@ -77,7 +77,7 @@ endif()
 
 
 
-set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "E:/programs/PICO/gcc-arm-none-eabi/arm-none-eabi/include/c++/10.3.1;E:/programs/PICO/gcc-arm-none-eabi/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v6-m/nofp;E:/programs/PICO/gcc-arm-none-eabi/arm-none-eabi/include/c++/10.3.1/backward;E:/programs/PICO/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/include;E:/programs/PICO/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/include-fixed;E:/programs/PICO/gcc-arm-none-eabi/arm-none-eabi/include")
+set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "D:/programs/Pico Installer/gcc-arm-none-eabi/arm-none-eabi/include/c++/10.3.1;D:/programs/Pico Installer/gcc-arm-none-eabi/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v6-m/nofp;D:/programs/Pico Installer/gcc-arm-none-eabi/arm-none-eabi/include/c++/10.3.1/backward;D:/programs/Pico Installer/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/include;D:/programs/Pico Installer/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/include-fixed;D:/programs/Pico Installer/gcc-arm-none-eabi/arm-none-eabi/include")
 set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "E:/programs/PICO/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp;E:/programs/PICO/gcc-arm-none-eabi/arm-none-eabi/lib/thumb/v6-m/nofp;E:/programs/PICO/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/10.3.1;E:/programs/PICO/gcc-arm-none-eabi/lib/gcc;E:/programs/PICO/gcc-arm-none-eabi/arm-none-eabi/lib")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

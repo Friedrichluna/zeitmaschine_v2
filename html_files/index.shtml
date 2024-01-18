@@ -243,7 +243,7 @@
 		<a href="/start.cgi?start=1"><button class="buttonSaveAndClose">Speichern und Starten</button></a> <!--Beenden der Eingabe und Start des Programmes-->
 	</div>
 	<div id="boxFooter"> <!--Box für Fußzeile, Erklärung unklarer Formulierungen-->
-		<p><sup>1</sup> 0 wird als "immer an" interpretiert.<br> 
+		<p><sup>0</sup> 0 wird als "immer an" interpretiert.<br> 
 		<p><sup>1</sup> "gedrückt halten"...Schalter muss gedrückt gehalten werden, damit Wiedergabe erfolgt;<br> 
 			"an/aus"...Wiedergabe wird mit Drücken des Tasters gestartet, Ende durch erneutes Drücken oder abgelaufene Zeit</p>
 		<p><sup>2</sup> Löschen: Durch das Auswählen keines Relays, wird der Timer gelöscht.</p>
