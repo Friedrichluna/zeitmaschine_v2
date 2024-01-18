@@ -159,7 +159,11 @@ public:
     void stopMusic(){
         DfPlayerPico dfp;
         //dfp.sendCmd(dfPlayer::cmd::STOP,00); //funktioniert nicht
-        dfp.specifyVolume(0); //0 bis 30, setzt die Lautstärke auf 0 = Stoppen der Musik
+        sleep_ms(100);
+        dfp.sendCmd(dfPlayer::cmd::SPECIFY_FOLDER_PLAYBACK,0);
+        sleep_ms(100);
+        dfp.sendCmd(dfPlayer::cmd::SPECIFY_TRACKING,0);
+        //dfp.specifyVolume(0); //0 bis 30, setzt die Lautstärke auf 0 = Stoppen der Musik
         //printf("Stop \n");
     } 
 
