@@ -217,7 +217,7 @@
                 <tr>
                     <td><input type="number" size="12" name="im" min="1" max="16" value="1"></td> <!--Input für den Index-->
                     <td><input type="number" size="15" name="bumu" min="1" max="7" step="1" value="1"></td> <!--Input für Schalter-->
-                    <td><input type="number" size="12" name="fo" min="1" max="100" step="1" value="1"></td> <!--Input für Ordner-->
+                    <td><input type="number" size="12" name="fo" min="1" max="100" step="1" value="1" readonly style="color:#80808047;"></td> <!--Input für Ordner-->
                     <td><input type="number" size="12" name="tr" min="0" max="999" step="1" value="0"></td> <!--Input für Track-->
 					<td><select id="t" name="t">
 						<option value="0">einmal</option>

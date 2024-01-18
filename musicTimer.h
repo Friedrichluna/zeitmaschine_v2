@@ -117,19 +117,19 @@ public:
             if(!volumeSelect){//wenn Lautstärke noch nicht gewählt ist, Lautstärke wählen. Sonst weitere Einstellungen abarbeiten
                 dfp.specifyVolume(15); //0 bis 30, setzt Lautstärke auf angegebenen Wert
                 volumeSelect = true;
-                //printf("volumeSelect \n");
+                printf("volumeSelect \n");
             }
             else{
                 if(!folderSelect){//wenn Ordner noch nicht gewählt ist, Ordner wählen. Sonst weitere Einstellungen abarbeiten
-                    dfp.sendCmd(dfPlayer::cmd::SPECIFY_FOLDER_PLAYBACK,folder); //wählt ordner "01" in SD-Karte aus  
+                    //dfp.sendCmd(dfPlayer::cmd::SPECIFY_FOLDER_PLAYBACK,folder); //wählt ordner "01" in SD-Karte aus  
                     folderSelect = true;
-                    //printf("folderSelect \n");
+                    printf("folderSelect \n");
                 }
                 else{
                     if(!trackSelect){//wenn Track noch nicht gewählt ist, Track wählen.
                         dfp.sendCmd(dfPlayer::cmd::SPECIFY_TRACKING,track); //wählt song: "002.mp3" aus ordner aus
                         trackSelect=true;
-                        //printf("trackselect \n");
+                        printf("trackselect \n");
                     }
                     else{
                         if(!repeatCheck){//wenn Modus (repeat/!repeat) noch nicht gewählt ist, Ordner wählen. Sonst weitere Einstellungen abarbeiten
@@ -158,13 +158,12 @@ public:
     //Funktion zum Unterbrechen der Musik
     void stopMusic(){
         DfPlayerPico dfp;
-        //dfp.sendCmd(dfPlayer::cmd::STOP,00); //funktioniert nicht
         sleep_ms(100);
-        dfp.sendCmd(dfPlayer::cmd::SPECIFY_FOLDER_PLAYBACK,0);
+        //dfp.sendCmd(dfPlayer::cmd::SPECIFY_FOLDER_PLAYBACK,0);
         sleep_ms(100);
         dfp.sendCmd(dfPlayer::cmd::SPECIFY_TRACKING,0);
         //dfp.specifyVolume(0); //0 bis 30, setzt die Lautstärke auf 0 = Stoppen der Musik
-        //printf("Stop \n");
+        printf("Stop \n");
     } 
 
     char* toString(){
