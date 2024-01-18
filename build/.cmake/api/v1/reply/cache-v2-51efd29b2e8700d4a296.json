@@ -279,10 +279,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "CXX compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "D:/programs/Pico Installer/gcc-arm-none-eabi/bin/arm-none-eabi-g++.exe"
 		},
 		{
@@ -407,10 +407,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "C compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "D:/programs/Pico Installer/gcc-arm-none-eabi/bin/arm-none-eabi-gcc.exe"
 		},
 		{
@@ -1475,7 +1475,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : " D:/programs/Pico Installer/pico-sdk/src/rp2_common/cmsis D:/programs/Pico Installer/pico-sdk/src/rp2040/hardware_regs"
+			"value" : " D:/programs/Pico Installer/pico-sdk/src/rp2_common/cmsis D:/programs/Pico Installer/pico-sdk/src/rp2040/hardware_regs D:/programs/Pico Installer/pico-sdk/src/rp2_common/cmsis D:/programs/Pico Installer/pico-sdk/src/rp2040/hardware_regs"
 		},
 		{
 			"name" : "PICO_DOXYGEN_PATHS",
@@ -1728,6 +1728,18 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "ba963d1fe2dcd4629980acb98ed70b3e"
+		},
+		{
+			"name" : "_Python3_Interpreter_REASON_FAILURE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Interpreter reason failure"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
 		},
 		{
 			"name" : "_Python3_NumPy_REASON_FAILURE",
