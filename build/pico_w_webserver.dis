@@ -45,11 +45,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  20 .debug_ranges 00008ca8  00000000  00000000  001235a0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line   0003cde5  00000000  00000000  0012c248  2**0
+ 21 .debug_line   0003cde7  00000000  00000000  0012c248  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_str    0001089b  00000000  00000000  0016902d  2**0
+ 22 .debug_str    0001089b  00000000  00000000  0016902f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 23 .debug_frame  000090e4  00000000  00000000  001798c8  2**2
+ 23 .debug_frame  000090e4  00000000  00000000  001798cc  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 C:/Users/frl00/OneDrive/Dokumente/Studium/Semester V/Mikrorechentechnik/Praktikum/HfBK Zeitmaschine/zeitmaschine_v2/build/pico_w_webserver.elf:     file format elf32-littlearm
